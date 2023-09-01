@@ -42,7 +42,7 @@ cat $JED_HOME/lib/*.sl | jed-to-tm > jed-lib.tm
 Nicholas Christopoulos
 .ME
 .br
-.UR https://github.com/nereusx/jedc-macros
+.UR https://codeberg.org/nereusx/jedc-macros
 Project page:
 .UE
 .

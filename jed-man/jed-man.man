@@ -93,7 +93,7 @@ command.
 Nicholas Christopoulos
 .ME
 .br
-.UR https://github.com/nereusx/jedc-macros
+.UR https://codeberg.org/nereusx/jedc-macros
 Project page:
 .UE
 .

@@ -27,21 +27,14 @@ man -s 3sl -m . write_buffer
 git clone git://git.jedsoft.org/git/slang.git
 ```
 
-2a) Get a copy of my patched version of JED
+2) Get a copy of my patched version of JED
 ```
-git clone https://github.com/nereusx/jedc
-```
-
-*OR*
-
-2b) Get a copy of original version of JED
-```
-git clone https://github.com/jedsoft/jed
+git clone https://codeberg.org/nereusx/jedc
 ```
 
 3) Get a copy of my jed macro packages (CBRIEF compatibility)
 ```
-git clone https://github.com/nereusx/jedc-macros
+git clone https://codeberg.org/nereusx/jedc-macros
 ```
 
 4) Ready to install
