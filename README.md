@@ -1,10 +1,10 @@
 # jedc-macros
 
-CBrief compatibility for Jed (see patched version [nereusx/jedc](https://codeberg.org/nereusx/jedc))
+CBrief compatibility for Jed (see patched jed version [nereusx/jedc](https://codeberg.org/nereusx/jedc))
 
 #### See also:
 jed-man - manual pages of slang+jed to be used by man (mandb/mandoc) - subproject:
-https://codeberg.org/nereusx/jedc-macros/blob/main/jed-man/README.md
+https://codeberg.org/nereusx/jedc-macros/src/branch/main/jed-man/README.md
 
 ## Require
 packages slang[1] gettext[2] xclip[3]
