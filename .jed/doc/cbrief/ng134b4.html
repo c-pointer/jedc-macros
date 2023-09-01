@@ -1,0 +1,89 @@
+<HTML><HEAD></head><BODY><CENTER><a href="https://www.retrogametreasure.com/refer/Timot-CBKFEICU" title="Retro video games delivered to your door every month!"target="_blank"><img src="https://d3a1v57rabk2hm.cloudfront.net/retrogametreasurecom/betterman_mobile/images/Logo-17.png?ts=1528471106&host=www.retrogametreasure.com" width="480" height="100" border="0" alt="Retro video games delivered to your door every month!" align="middle"><br><font size="5">Click above to get retro games delivered to your door ever month!</font></a></CENTER></body></html><HTML>
+
+
+
+<html>
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/ng134b4.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:59 GMT -->
+<head>
+<meta name=keywords content="X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - set_ctrl_state(ctl_id, state, [win_id]), intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for BHELP On-Line: CBRIEF Macro Help - set_ctrl_state(ctl_id, state, [win_id])">
+<title>X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - set_ctrl_state(ctl_id, state, [win_id])</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<a href="http://www.x-hacker.org/" target="_top"><img align="right" alt="http://www.X-Hacker.org" border="0" src="../../images/x-hacker.gif"></a>
+<a href="ng13363.html">[&lt;&lt;Previous Entry]</a> <a href="ng2ac.html">[^^Up^^]</a> <a href="ng13bea.html">[Next Entry&gt;&gt;]</a> <a href="index-2.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+set_ctrl_state(ctl_id, state, [win_id])
+
+     <B>Usage:</B> Controls the window control settings.  Controls really
+            have two types of states, the basic enable/disable and
+            an additional hide/show for temporary purposes.  There is
+            no effect when you try to hide or show a control that
+            is disabled.
+
+<B>Parameters:</B> Ctl_id .int. specifies a control. State .int. is the new
+            state desired.  Win_id .int. specifies a window, but is
+            only used in certain situations (see below). Best to use
+            the defines given in win_ctrl.h:
+
+            CONTROLS:   CLOSE_BTN     HORZ_SCROLL     VERT_THUMB
+                        ZOOM_BTN      VERT_SCROLL     HORZ_THUMB
+
+            STATES:     ENABLE_CTRL   HIDE_CTRL       SHOW_ZOOMED
+                        DISABLE_CTRL  SHOW_CTRL
+
+            The states have the following properties:
+
+            ENABLE_CTRL
+            Enables the given control for all windows.  This is a
+            "global" enable which changes every window.
+
+            DISABLE_CTRL
+            Disables the given control for all windows. This is a
+            "global" disable which changes every window.
+
+            HIDE_CTRL
+            If a control is enabled, this will temporarily hide it.
+            If win_id is NOT given, then all newly created
+            windows will be affected (NOT the currently visible
+            ones).  If win_id IS given then the control will be
+            immediately hidden for that window.  You can nest
+            HIDE_CTRL calls.  The manual implies that there is a
+            stack for HIDE/SHOW when no win_id is given, so be sure to
+            SHOW everything you HIDE.
+
+            SHOW_CTRL
+            Restores the state of controls hidden with HIDE_CTRL.
+            If win_id is not given, this affects all windows.
+            Remember the stack for calls without giving win_id!
+            If win_id is given, that window is the only one affected.
+
+            SHOW_ZOOMED
+            Controls the ZOOMED [.] button.  After setting this, the
+            button will be displayed until a non-overlapping window
+            is displayed.
+
+   <B>Returns:</B> Nothing
+</pre><hr><b>See Also:</b> <a href="nga5f1.html">inq_ctrl_state</a> <pre></pre><hr><center><b>
+<font size="-1">Online resources provided by: <a href="http://www.x-hacker.org/" target="_top">http://www.X-Hacker.org</a> ---  NG 2 HTML conversion by <a href="http://www.davep.org/" target="_top">Dave Pearson</a></b></center>
+<hr>
+
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/ng134b4.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:59 GMT -->
+</html>
+

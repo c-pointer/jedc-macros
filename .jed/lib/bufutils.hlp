@@ -1,0 +1,388 @@
+run_local_hook
+
+ SYNOPSIS
+  Run a local hook if it exists
+
+ USAGE
+   Void run_local_hook(String hook, [args])
+
+ DESCRIPTION
+  The hook is looked for in the following places:
+  
+    * the blocal variable `hook'
+    * the mode info field `hook'
+    * or a function with name <modename>_`hook'
+       [i.e. sprintf("%s_%s", normalized_modename(), hook)]
+  
+  and can be defined with one of
+
+    define_blocal_var("<hook>", &<function_name>);
+    define_blocal_var("<hook>", "<function_name>");
+    mode_set_mode_info("<hook>", "<function_name>");
+    mode_set_mode_info("<modename>", "<hook>", "<function_name>");
+    define <modename>_<hook>() { <code> }
+
+  This way a mode can set a mode- or buffer-dependent function to a common
+  keybinding.
+
+ EXAMPLE
+ Set up a key to do a default action on a buffer ("run it"):
+
+    define run_buffer() { run_local_hook("run_buffer_hook"); }
+    setkey("run_buffer", "^[^M");    % Alt-Return
+    mode_set_mode_info("SLang", "run_buffer_hook", "evalbuffer");
+    mode_set_mode_info("latex", "run_buffer_hook", "latex_compose");
+    mode_set_mode_info("python", "run_buffer_hook", "py_exec");
+
+
+ SEE ALSO
+  runhooks, run_function, get_blocal, run_buffer, mode_set_mode_info
+-----------------------------------
+
+run_buffer
+
+ SYNOPSIS
+  Run the current buffer
+
+ USAGE
+  Void run_buffer()
+
+ DESCRIPTION
+  "Run" the current buffer. The actual function performed is defined by
+  the local "run_buffer_hook" (see `run_local_hook').
+
+ EXAMPLE
+  Some modes set the `run_mode_hook' by themself, for others you can use
+  `mode_set_mode_info' (since Jed 0.99.17), e.g.
+
+    mode_set_mode_info("latex", "run_buffer_hook", "latex_compose");
+
+  or using mode_hooks (this variant is also proof for Jed <= 0.99.16)
+
+    define calc_mode_hook ()
+    {
+       define_blocal_var("run_buffer_hook", "calc_make_calculation");
+       set_buffer_undo(1);
+    }
+
+
+ SEE ALSO
+  run_local_hook, evalbuf
+-----------------------------------
+
+window_set_rows
+
+ SYNOPSIS
+  Make the current window `n' rows big
+
+ USAGE
+  window_set_rows(Int n)
+
+ USAGE
+  window_set_rows(Double_Type n)
+
+ DESCRIPTION
+ Resizes the current window:
+   If `n' is of Double_Type (e.g. 0.5), the window is rezized to
+   this fraction of the screen.
+   If there is only one window, a new window is created.
+   If `n' is zero, the window is deleted
+   If `n' is negative, the window is reduced by `n' lines.
+   (Use loop(n) enlargewin(); to get relative enlargement.)
+
+ NOTES
+ If there are more than two windows open, the function might not work as
+ desired.
+
+ SEE ALSO
+  fit_window, enlargewin, splitwindow, onewindow
+-----------------------------------
+
+fit_window
+
+ SYNOPSIS
+  Fit the window size to the lenght of the buffer
+
+ USAGE
+  fit_window (max_rows=1.0)
+
+ DESCRIPTION
+ If there is more than one window open, the size of the current window is
+ adapted to the length of the buffer it contains. The optional argument
+ `max_rows' gives the upper limit for the window size, either as
+ proportion of the total space (`Double_Type') or as number of lines
+ (`Integer_Type'). The default max_rows=1.0 means no limit, max_rows=0
+ means: don't fit.
+
+ SEE ALSO
+  enlargewin, popup_buffer
+-----------------------------------
+
+close_buffer
+
+ SYNOPSIS
+  Close the current (or given) buffer
+
+ USAGE
+   Void close_buffer(buf = whatbuf())
+
+ DESCRIPTION
+   Close the current (or given) buffer.
+   Run the blocal "close_buffer_hook"
+
+ SEE ALSO
+  delbuf, close_window, popup_buffer, set_blocal_var
+-----------------------------------
+
+close_and_insert_word
+
+ SYNOPSIS
+  Close buffer, insert current word in calling buffer
+
+ USAGE
+  close_and_insert_word()
+
+ DESCRIPTION
+  Close buffer, insert current word in the buffer indicated by
+  the buffer-local ("blocal") variable "calling_buffer".
+
+ NOTES
+  The `popup_buffer' function automatically records the calling
+  buffer.
+
+ SEE ALSO
+  close_and_replace_word, popup_buffer, close_buffer
+-----------------------------------
+
+close_and_replace_word
+
+ SYNOPSIS
+  Close buffer, replace current word in calling buffer
+
+ USAGE
+  close_and_replace_word()
+
+ DESCRIPTION
+  Close buffer, insert current word into the buffer indicated by the blocal
+  variable "calling_buffer" replacing the current word (or visible region)
+  there.
+
+ NOTES
+  The `popup_buffer' function automatically records the calling
+  buffer.
+
+ SEE ALSO
+  close_and_insert_word, popup_buffer, close_buffer, get_blocal
+-----------------------------------
+
+popup_buffer
+
+ SYNOPSIS
+  Open a "popup" buffer
+
+ USAGE
+  popup_buffer(buf, max_rows = Max_Popup_Size)
+
+ DESCRIPTION
+ The "popup" buffer opens in a second window (using pop2buf).
+ Closing with close_buffer closes the popup window (if new)
+ or puts back the previous buffer (if reused).
+
+ The blocal variable "is_popup" marks the buffer as "popup".
+ It contains the upper limit when fitting the window or 0 if the window
+ should not be resized.
+
+
+ EXAMPLE
+  Open a popup window and fit (if applicable) after inserting stuff:
+
+         popup_buffer(buf);
+         insert("hello world");
+         % insert_file("hello.txt");
+         fit_window(get_blocal("is_popup", 0));
+
+
+
+ SEE ALSO
+  setbuf, sw2buf, close_buffer, fit_window, delete_window
+-----------------------------------
+
+rebind
+
+ SYNOPSIS
+  Rebind all keys bound to `old_fun' to `new_fun'.
+
+ USAGE
+  rebind(old_fun, new_fun, keymap=what_keymap(), prefix="")
+
+ DESCRIPTION
+ The function acts on the local keymap (if not told otherwise by the
+ `keymap' argument. It scans for all bindings to `old_fun' with
+ `which_key' and sets them to `new_fun'. 
+
+ EXAMPLE
+  The email mode (email.sl) uses rebind to bind the mode-specific formatting
+  function to the key(s) used for format_paragraph:
+
+   rebind("format_paragraph", "email_reformat", mode);
+
+
+ NOTES
+  If the optional argument `prefix' is not empty, the prefix will be 
+  prepended to the key to bind to. Use this to create "maps" of bindings
+  that reflect the users normal binding, e.g. with `_Reserved_Key_Prefix'
+  (this is what `rebind_reserved' does).
+
+ SEE ALSO
+  setkey, local_setkey, definekey, definekey_reserved
+-----------------------------------
+
+rebind_reserved
+
+ SYNOPSIS
+  Rebind a function prepending the `_Reserved_Key_Prefix'
+
+ USAGE
+   rebind_reserved(old_fun, new_fun, keymap)
+
+ DESCRIPTION
+ Call `rebind' with `prefix' set to `_Reserved_Key_Prefix'.
+
+ NOTES
+ The action is more a remodelling than a rebinding, the name should reflect
+ the close relation to the `rebind' function.
+
+ SEE ALSO
+  rebind, definekey_reserved, setkey_reserved
+-----------------------------------
+
+buffer_dirname
+
+ SYNOPSIS
+  Return the directory associated with the buffer
+
+ USAGE
+  Str buffer_dirname()
+
+ DESCRIPTION
+   Return the directory associated with the buffer}
+
+ SEE ALSO
+  getbuf_info, buffer_filename
+-----------------------------------
+
+arrayread_file
+
+ SYNOPSIS
+  Read a file and return it as array of lines.
+
+ USAGE
+  Array[String] arrayread_file(name)
+
+ DESCRIPTION
+   Read a file and return it as a String_Type array of lines. 
+   Newlines are preserved.
+
+ NOTES
+ To get rid of the newlines, you can do 
+
+   result = array_map(String_Type, &strtrim_end, arrayread_file(name), "\n");
+
+
+ SEE ALSO
+  strread_file, fgetslines
+-----------------------------------
+
+strread_file
+
+ SYNOPSIS
+  Read a file and return as (binary) string
+
+ USAGE
+  BString strread_file(String name)
+
+ DESCRIPTION
+   Read a file and return as string (`BString_Type').
+
+ NOTES
+   If the file size exceeds the internal limit (currently 5MB),
+   an error is returned.
+
+ SEE ALSO
+  arrayread_file, find_file, fread, fread_bytes
+-----------------------------------
+
+reload_buffer
+
+ SYNOPSIS
+  Restore (or update) a buffer to the version on disk
+
+ USAGE
+  reload_buffer()
+
+ DESCRIPTION
+  Replace the buffer contents with the content of the associated file.
+  This will restore the last saved version or update (if the file changed 
+  on disk).
+
+ SEE ALSO
+  insert_file, find_file, write_buffer, make_backup_filename
+-----------------------------------
+
+bufsubfile
+
+ SYNOPSIS
+  Write region|buffer to a temporary file and return its name.
+
+ USAGE
+  String = bufsubfile(delete=0, base=NULL)
+
+ DESCRIPTION
+   Write the region to a temporary file. If no visible region is defined, 
+   write the whole buffer.
+   
+   If `base' is not absolute, the file is written to the `Jed_Tmp_Directory'.
+   If `base' == NULL (default), the buffer-name is taken as basename
+   If `delete' != 0, delete the region|buffer after writing.
+   
+   Return the full filename.
+   
+   The temporary file will be deleted at exit of jed (if the calling 
+   function doesnot delete it earlier).
+
+ NOTES
+   bufsubfile() enables shell commands working on files
+   to act on the current buffer and return the command output.
+    * run_shell_cmd() returns output but doesnot take input from jed,
+    * pipe_region() only takes input but outputs to stdout, but
+    * shell_cmd_on_region() uses bufsubfile() and run_shell_cmd() for 
+      bidirectioal interaction
+   As some commands expect a certain file extension, the extension of
+   `base' is added to the temporary file's name.   
+\seealso{make_tmp_file, is_visible_mark, push_visible_mark, 
+
+ SEE ALSO
+  run_shell_cmd, shell_cmd_on_region, filter_region
+-----------------------------------
+
+untab_buffer
+
+ SYNOPSIS
+  Untab the whole buffer
+
+ USAGE
+  Void untab_buffer()
+
+ DESCRIPTION
+  Convert all hard tabs ("\t") in the current buffer into spaces. The
+  buffer-local value of `TAB' determines how many spaces are used for the
+  substitution.
+
+ NOTES
+  Whether hard Tabs will be used for editing is defined by the
+  global variable `USE_TABS' and the buffer-local variable `TAB'.
+
+ SEE ALSO
+  untab
+-----------------------------------
+

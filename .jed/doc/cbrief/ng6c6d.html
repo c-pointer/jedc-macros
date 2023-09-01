@@ -1,0 +1,73 @@
+<HTML><HEAD></head><BODY><CENTER><a href="https://www.retrogametreasure.com/refer/Timot-CBKFEICU" title="Retro video games delivered to your door every month!"target="_blank"><img src="https://d3a1v57rabk2hm.cloudfront.net/retrogametreasurecom/betterman_mobile/images/Logo-17.png?ts=1528471106&host=www.retrogametreasure.com" width="480" height="100" border="0" alt="Retro video games delivered to your door every month!" align="middle"><br><font size="5">Click above to get retro games delivered to your door ever month!</font></a></CENTER></body></html><HTML>
+
+
+
+<html>
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/ng6c6d.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:45 GMT -->
+<head>
+<meta name=keywords content="X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - dos([command],[use_dos_shell]), intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for BHELP On-Line: CBRIEF Macro Help - dos([command],[use_dos_shell])">
+<title>X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - dos([command],[use_dos_shell])</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<a href="http://www.x-hacker.org/" target="_top"><img align="right" alt="http://www.X-Hacker.org" border="0" src="../../images/x-hacker.gif"></a>
+<a href="ng6b9e.html">[&lt;&lt;Previous Entry]</a> <a href="ng2ac.html">[^^Up^^]</a> <a href="ng7317.html">[Next Entry&gt;&gt;]</a> <a href="index-2.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+dos([command],[use_dos_shell])
+
+     <B>Usage:</B> Executes a DOS command from inside BRIEF or causes a
+            shell to DOS. The command is located by searching the DOS
+            PATH for a .com or .exe file.  If the command is not found,
+            then it is passed directly to DOS (since it might be an
+            internal command or .bat file).
+            +--------------------------------------------------------+
+            |NOTE: Some programs can clobber BRIEF, especially those |
+            |using pre-DOS 2.0 memory allocation calls.  It is always|
+            |safest to save all modified buffers before using <U>dos</U>.   |
+            +--------------------------------------------------------+
+
+<B>Parameters:</B> Command .string. is the command to be executed.  If
+            omitted, a DOS shell is created instead, from which the
+            user must type EXIT to return to BRIEF. Parameters may be
+            included in the string, delimited by spaces. Redirection
+            of standard input and output is allowed (including
+            appending), but not pipes. Standard error can be redirected
+            to the same file as standard output by using &gt;&amp; or &gt;&gt;&amp;.
+            If standard error is redirected, BRIEF will not clear the
+            screen before and after the command executes.  Use_dos_shell
+            .int. is 0 to skip passing the command to DOS (only look
+            along the path), non-0 or omitted to try the DOS shell too.
+
+   <B>Returns:</B> DOS error level returned by the command, or the DOS shell
+            error value if executed by the shell. Some of the error
+            codes possible are:
+                        2           File not found
+                        3           Path not found
+                        4           Too many open files
+                        5           Access denied
+                        8           Insufficient memory
+                        15          Invalid drive
+            Other codes can be found in the DOS Tech Reference.
+</pre><hr><b>See Also:</b> <a href="ng3cb2.html">cd</a> <a href="ng5c8f.html">del</a> <a href="ng5b27.html">date</a> <a href="ng831f.html">exist</a> <a href="ng9018.html">getwd</a> <a href="ng15354.html">time</a> <pre></pre><hr><center><b>
+<font size="-1">Online resources provided by: <a href="http://www.x-hacker.org/" target="_top">http://www.X-Hacker.org</a> ---  NG 2 HTML conversion by <a href="http://www.davep.org/" target="_top">Dave Pearson</a></b></center>
+<hr>
+
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/ng6c6d.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:45 GMT -->
+</html>
+

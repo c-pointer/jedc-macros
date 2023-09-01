@@ -1,0 +1,112 @@
+\# -*- mode: manedit; tab-width: 4 -*-
+\# jed-man.man -> jed-man.1
+\#
+\# Copyright (C) 1989-2022 Free Software Foundation, Inc.
+\#
+\# Permission is granted to copy, distribute and/or modify this
+\# document under the terms of the GNU Free Documentation License,
+\# Version 1.3 or any later version published by the Free Software
+\# Foundation; with no Invariant Sections, with no Front-Cover Texts,
+\# and with no Back-Cover Texts.
+\#
+\# A copy of the Free Documentation License is included as a file
+\# called FDL in the main directory of the groff source package.
+\#
+.TH jed-man 1 "24 Sep 2022" "NDC-Tools" "User Commands"
+.SH NAME
+jed-man \- creates manual pages and/or used as \fBman\fR command for S-Lang and/or JED.
+.
+.SH SYNOPSIS
+.SY jed-man
+.OP \-s text
+.OP \-d text
+.OP \-r{s|d} pattern
+.OP \-a
+.OP \-m
+.OP \-c
+.OP \-p directory
+.OP \-h
+.OP \-v
+.YS
+.
+.SH DESCRIPTION
+This program loads and process \(oqtm\(cq files of S-Lang / JED.
+Those files are the official documentation of the projects.
+It can be used to search and display help pages in the terminal or with groff output.
+Also, it can be used to create manual directory with manual pages (e.g. \(oq/usr/man/man3sl\(cq).
+.
+.SH OPTIONS
+.TP
+.BR \-a
+Prints all the pages of its database.
+.TP
+.BI \-s\  text
+Search for names for \fItext\fR.
+.TP
+.BI \-d\  text
+Search names and descriptions for \fItext\fR.
+.TP
+.BI \-r{s|d}\  pattern
+Used with \(oq\-qs\(cq or \(oq\-d\(cq to enable regular expression patterns.
+.TP
+.BR \-m
+Enables groff output instead of console codes.
+.TP
+.BR \-c
+Creates cache-file to speed up the queries.
+The cache contains the whole database, no source files are needed after that.
+.TP
+.BR \-p\ \fI output-directory \fR
+Create man pages directory for all the elements of its database.
+Use it with \(oq\-m\(cq option to get clean manual pages.
+This option will erase the cache file before runs.
+.
+.SH EXAMPLES
+.EX
+# regex search:
+jed-man -rs buffer
+
+# create manpages in man3sl directory, it is best to put man3sl inside
+# \(oq/usr/share/man\(cq directory or add its parent to \fI$MANPATH\fR.
+# Also it should be used with \(oq\-m\(cq option to produce groff pages.
+jed-man -apm man3sl
+.EE
+.
+.SH FILES
+\fBjed\-man\fR reads \(oq\fI${JED_HOME}/.jed-man.rc\fR\(cq, otherwise the \(oq\fI~/.jed-man.rc\fR\(cq file.
+.TP
+.BR *.tm
+These files are the source files and exists in S-Lang (\(oqslang/doc/tm/rtl\(cq) and JED (\(oqjed/doc/tm/rtl\(cq) projects.
+If jed\-man create cache, it will not need to use them again. If it will create man\-pages of course are not needed from
+.BR \%man (1)
+command.
+.
+.SH SEE ALSO
+.BR \%jed (1),
+.BR \%slsh (1),
+.BR \%man (1),
+.BR \%groff (1), 
+.BR \%regex (7).
+.
+.SH AUTHOR
+.MT nereus@\:freemail.gr
+Nicholas Christopoulos
+.ME
+.br
+.UR https://github.com/nereusx/jedc-macros
+Project page:
+.UE
+.
+.SH COPYRIGHT
+Copyright © 2020, 2022 Nicholas Christopoulos.
+.br
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+.br
+There is NO WARRANTY, to the extent permitted by law.
+.
+\# Local Variables:
+\# mode: nroff
+\# End:
+\# vim: set filetype=groff:

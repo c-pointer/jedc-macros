@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<todo version="0.1.20">
+    <note priority="medium" time="1666786099" done="1666791312">
+        bkmark save to session
+    </note>
+    <note priority="medium" time="1666791461" done="1668980081">
+        rc_file variables to csplit
+    </note>
+    <note priority="medium" time="1664146813" done="1668980089">
+        chdir / rmdir needs, c_seldir()
+    </note>
+    <note priority="medium" time="1664146813">
+        jed-man mode
+    </note>
+</todo>

@@ -1,0 +1,16 @@
+*.slc
+*~
+update-jed.sh
+.jed/data/*
+.jed/tests/*
+doc/jed-plain-help
+doc/jed-help
+doc/jed-man
+doc/man3sl
+jed-man/jed-man
+jed-man/slang-rtl
+jed-man/jed-rtl
+jed-man/man3sl
+jed-man/jed-to-tm
+jed-man/missing/auto-*
+

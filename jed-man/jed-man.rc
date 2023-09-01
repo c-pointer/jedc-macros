@@ -1,0 +1,7 @@
+# jed-man configuration file
+#
+# add-source-path /usr/local/share/jed-man/tm/*.tm
+# add-source-path /usr/share/jed-man/tm/*.tm
+#
+# cache-file = ${JED_HOME}/.jed/data/cache/jed-man.cache
+#

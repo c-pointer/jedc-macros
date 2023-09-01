@@ -1,0 +1,45 @@
+\# This is a comment... (old versions using .\", older \")
+\# exec: groff Man-Page.man -Tutf8 -man | less
+\#
+\# .TH cmd-name section [date [version [page-descr]]]
+.TH @{point}cmd 8 "12 Mar 1971" "1.0" "cmd man page"
+.
+.SH NAME
+cmd-name \- short description
+.
+.SH SYNOPSIS
+.SY command
+.OP \-s text
+.YS
+.
+.SH DESCRIPTION
+\# .PP new paragraph; .br break line;
+\fBcommand\fR blah blah blah...
+\# .EX
+\# This is an example
+\# .EE
+.
+.SH OPTIONS
+.TP
+.BR \-o ", " \-\-long-option [=\fIdata\fR]
+blah blah ...
+.
+.SH SEE ALSO
+.BR command1 section,
+.BR command2 section.
+.
+.SH AUTHOR
+\# '\:' is line break point
+.MT @{email}
+@{author}
+.ME
+.br
+.UR http://\:nicholas\-christopoulos\:.dev
+Personal pages
+.UE
+.SH COPYRIGHT
+Copyright © @{year} @{author}.
+License GPLv3+: GNU GPL version 3 or later <https:\://gnu.org/\:licenses/\:gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+\# EOF

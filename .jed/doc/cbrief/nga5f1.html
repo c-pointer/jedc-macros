@@ -1,0 +1,76 @@
+<HTML><HEAD></head><BODY><CENTER><a href="https://www.retrogametreasure.com/refer/Timot-CBKFEICU" title="Retro video games delivered to your door every month!"target="_blank"><img src="https://d3a1v57rabk2hm.cloudfront.net/retrogametreasurecom/betterman_mobile/images/Logo-17.png?ts=1528471106&host=www.retrogametreasure.com" width="480" height="100" border="0" alt="Retro video games delivered to your door every month!" align="middle"><br><font size="5">Click above to get retro games delivered to your door ever month!</font></a></CENTER></body></html><HTML>
+
+
+
+<html>
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/nga5f1.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:48 GMT -->
+<head>
+<meta name=keywords content="X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - inq_ctrl_state(ctl_id, [win_id]), intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for BHELP On-Line: CBRIEF Macro Help - inq_ctrl_state(ctl_id, [win_id])">
+<title>X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - inq_ctrl_state(ctl_id, [win_id])</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<a href="http://www.x-hacker.org/" target="_top"><img align="right" alt="http://www.X-Hacker.org" border="0" src="../../images/x-hacker.gif"></a>
+<a href="nga4fa.html">[&lt;&lt;Previous Entry]</a> <a href="ng2ac.html">[^^Up^^]</a> <a href="ngabc2.html">[Next Entry&gt;&gt;]</a> <a href="index-2.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+inq_ctrl_state(ctl_id, [win_id])
+
+     <B>Usage:</B> Gives the state of the window controls.  Defines for
+            control names can be found in win_ctrl.h.
+
+<B>Parameters:</B> Ctl_id .int. names the control in question.  Win_id .int.
+            is optional, specifying the window.  If omitted, the
+            current window is used.
+
+            CONTROLS:   CLOSE_BTN   HORZ_SCROLL   VERT_THUMB
+                        ZOOM_BTN    VERT_SCROLL   HORZ_THUMB
+
+   <B>Returns:</B> That depends on the control specified:
+
+        +----------------------------------------------------------+
+        |              |                                           |
+        | CLOSE_BTN    |  0 - Disabled                             |
+        | ZOOM_BTN     |  1 - Enabled.  If this is HORZ_SCROLL,    |
+        | VERT_SCROLL  |      then the bar is on the bottom of     |
+        | HORZ_SCROLL  |      the screen.                          |
+        |              |  2 - used by HORZ_SCROLL only, this is    |
+        |              |      enabled, but the scroll bar is       |
+        |              |      above the bottom line.               |
+        |              | -1 - Enabled, but hidden.  It was hidden  |
+        |              |      without specifying a window id.      |
+        |              | -2 - Enabled, but hidden.  It was hidden  |
+        |              |      by specifying a window id.           |
+        |              | -3 - Enabled, but hidden.  It was done    |
+        |              |      twice, both with and without         |
+        |              |      specifying a window id.              |
+        |--------------+-------------------------------------------|
+        |              |                                           |
+        | VERT_THUMB   |  0 - No thumb.  Only returned when the    |
+        | HORZ_THUMB   |      the scroll bar is disabled.          |
+        |              |  n - The position, in the range of 0-100  |
+        |              |                                           |
+        +----------------------------------------------------------+
+
+</pre><hr><b>See Also:</b> <a href="ng134b4.html">set_ctrl_state</a> <pre></pre><hr><center><b>
+<font size="-1">Online resources provided by: <a href="http://www.x-hacker.org/" target="_top">http://www.X-Hacker.org</a> ---  NG 2 HTML conversion by <a href="http://www.davep.org/" target="_top">Dave Pearson</a></b></center>
+<hr>
+
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/nga5f1.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:48 GMT -->
+</html>
+

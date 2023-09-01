@@ -1,0 +1,487 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE> Jed Intrinsic Function Reference Manual</TITLE>
+<LINK HREF="jedfuns-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="jedfuns-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1> Jed Intrinsic Function Reference Manual</H1>
+
+<H2>John E. Davis, <CODE>davis@space.mit.edu</CODE></H2> Sun Nov 14 02:31:02 1999
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="jedfuns-1.html">Movement Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-1.html#ss1.1">1.1 <B>_get_point</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.2">1.2 <B>_set_point</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.3">1.3 <B>backward_paragraph</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.4">1.4 <B>bob</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.5">1.5 <B>bol</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.6">1.6 <B>bskip_chars</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.7">1.7 <B>bskip_non_word_chars</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.8">1.8 <B>bskip_word_chars</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.9">1.9 <B>down</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.10">1.10 <B>eob</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.11">1.11 <B>eol</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.12">1.12 <B>forward_paragraph</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.13">1.13 <B>goto_column</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.14">1.14 <B>goto_column_best_try</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.15">1.15 <B>goto_line</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.16">1.16 <B>left</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.17">1.17 <B>right</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.18">1.18 <B>skip_chars</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.19">1.19 <B>skip_non_word_chars</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.20">1.20 <B>skip_white</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.21">1.21 <B>skip_word_chars</B></A>
+<LI><A HREF="jedfuns-1.html#ss1.22">1.22 <B>up</B></A>
+</UL>
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="jedfuns-2.html">Insertion/Deletions Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-2.html#ss2.1">2.1 <B>USE_TABS</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.2">2.2 <B>WRAP</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.3">2.3 <B>WRAP_INDENTS</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.4">2.4 <B>del</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.5">2.5 <B>del_region</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.6">2.6 <B>erase_buffer</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.7">2.7 <B>indent_line</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.8">2.8 <B>insbuf</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.9">2.9 <B>insert</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.10">2.10 <B>insert_char</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.11">2.11 <B>insert_file_region</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.12">2.12 <B>insert_from_kill_array</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.13">2.13 <B>trim</B></A>
+<LI><A HREF="jedfuns-2.html#ss2.14">2.14 <B>whitespace</B></A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="jedfuns-3.html">Search Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-3.html#ss3.1">3.1 <B>CASE_SEARCH</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.2">3.2 <B>bfind</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.3">3.3 <B>bfind_char</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.4">3.4 <B>bol_bsearch</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.5">3.5 <B>bol_bsearch_char</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.6">3.6 <B>bol_fsearch</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.7">3.7 <B>bol_fsearch_char</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.8">3.8 <B>bsearch</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.9">3.9 <B>bsearch_char</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.10">3.10 <B>ffind</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.11">3.11 <B>ffind_char</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.12">3.12 <B>find_matching_delimiter</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.13">3.13 <B>fsearch</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.14">3.14 <B>fsearch_char</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.15">3.15 <B>looking_at</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.16">3.16 <B>re_bsearch</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.17">3.17 <B>re_fsearch</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.18">3.18 <B>regexp_nth_match</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.19">3.19 <B>replace</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.20">3.20 <B>replace_chars</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.21">3.21 <B>replace_match</B></A>
+<LI><A HREF="jedfuns-3.html#ss3.22">3.22 <B>search_file</B></A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="jedfuns-4.html">Buffer Related Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-4.html#ss4.1">4.1 <B>ADD_NEWLINE</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.2">4.2 <B>MAX_HITS</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.3">4.3 <B>TAB</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.4">4.4 <B>autosave</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.5">4.5 <B>autosaveall</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.6">4.6 <B>buffer_list</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.7">4.7 <B>buffer_visible</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.8">4.8 <B>bufferp</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.9">4.9 <B>bury_buffer</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.10">4.10 <B>check_buffers</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.11">4.11 <B>delbuf</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.12">4.12 <B>getbuf_info</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.13">4.13 <B>pop2buf</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.14">4.14 <B>pop2buf_whatbuf</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.15">4.15 <B>set_buffer_hook</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.16">4.16 <B>set_buffer_umask</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.17">4.17 <B>set_mode</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.18">4.18 <B>setbuf</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.19">4.19 <B>setbuf_info</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.20">4.20 <B>sw2buf</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.21">4.21 <B>what_mode</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.22">4.22 <B>whatbuf</B></A>
+<LI><A HREF="jedfuns-4.html#ss4.23">4.23 <B>write_buffer</B></A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="jedfuns-5.html">Abbreviation Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-5.html#ss5.1">5.1 <B>abbrev_table_p</B></A>
+<LI><A HREF="jedfuns-5.html#ss5.2">5.2 <B>create_abbrev_table</B></A>
+<LI><A HREF="jedfuns-5.html#ss5.3">5.3 <B>define_abbrev</B></A>
+<LI><A HREF="jedfuns-5.html#ss5.4">5.4 <B>delete_abbrev_table</B></A>
+<LI><A HREF="jedfuns-5.html#ss5.5">5.5 <B>dump_abbrev_table</B></A>
+<LI><A HREF="jedfuns-5.html#ss5.6">5.6 <B>list_abbrev_tables</B></A>
+<LI><A HREF="jedfuns-5.html#ss5.7">5.7 <B>use_abbrev_table</B></A>
+<LI><A HREF="jedfuns-5.html#ss5.8">5.8 <B>what_abbrev_table</B></A>
+</UL>
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="jedfuns-6.html">Buffer-Local Variable Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-6.html#ss6.1">6.1 <B>create_blocal_var</B></A>
+<LI><A HREF="jedfuns-6.html#ss6.2">6.2 <B>get_blocal_var</B></A>
+<LI><A HREF="jedfuns-6.html#ss6.3">6.3 <B>set_blocal_var</B></A>
+</UL>
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="jedfuns-7.html">Color Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-7.html#ss7.1">7.1 <B>color_number</B></A>
+<LI><A HREF="jedfuns-7.html#ss7.2">7.2 <B>set_color</B></A>
+<LI><A HREF="jedfuns-7.html#ss7.3">7.3 <B>set_color_esc</B></A>
+<LI><A HREF="jedfuns-7.html#ss7.4">7.4 <B>set_color_object</B></A>
+<LI><A HREF="jedfuns-7.html#ss7.5">7.5 <B>set_column_colors</B></A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="jedfuns-8.html">Loading and Evaluation of S-Lang Code Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-8.html#ss8.1">8.1 <B>_autoload</B></A>
+<LI><A HREF="jedfuns-8.html#ss8.2">8.2 <B>evalbuffer</B></A>
+<LI><A HREF="jedfuns-8.html#ss8.3">8.3 <B>get_jed_library_path</B></A>
+<LI><A HREF="jedfuns-8.html#ss8.4">8.4 <B>set_jed_library_path</B></A>
+</UL>
+<P>
+<H2><A NAME="toc9">9.</A> <A HREF="jedfuns-9.html">File Related Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-9.html#ss9.1">9.1 <B>BACKUP_BY_COPYING</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.2">9.2 <B>IsHPFSFileSystem</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.3">9.3 <B>change_default_dir</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.4">9.4 <B>copy_file</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.5">9.5 <B>delete_file</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.6">9.6 <B>directory</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.7">9.7 <B>expand_filename</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.8">9.8 <B>extract_filename</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.9">9.9 <B>file_changed_on_disk</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.10">9.10 <B>file_status</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.11">9.11 <B>file_time_compare</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.12">9.12 <B>find_file</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.13">9.13 <B>insert_file</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.14">9.14 <B>msdos_fixup_dirspec</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.15">9.15 <B>read_file</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.16">9.16 <B>rename_file</B></A>
+<LI><A HREF="jedfuns-9.html#ss9.17">9.17 <B>set_file_translation</B></A>
+</UL>
+<P>
+<H2><A NAME="toc10">10.</A> <A HREF="jedfuns-10.html">Functions that work with Hidden Lines</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-10.html#ss10.1">10.1 <B>is_line_hidden</B></A>
+<LI><A HREF="jedfuns-10.html#ss10.2">10.2 <B>set_line_hidden</B></A>
+<LI><A HREF="jedfuns-10.html#ss10.3">10.3 <B>set_region_hidden</B></A>
+<LI><A HREF="jedfuns-10.html#ss10.4">10.4 <B>skip_hidden_lines_backward</B></A>
+<LI><A HREF="jedfuns-10.html#ss10.5">10.5 <B>skip_hidden_lines_forward</B></A>
+</UL>
+<P>
+<H2><A NAME="toc11">11.</A> <A HREF="jedfuns-11.html">Informational Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-11.html#ss11.1">11.1 <B>bobp</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.2">11.2 <B>bolp</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.3">11.3 <B>count_chars</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.4">11.4 <B>eobp</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.5">11.5 <B>eolp</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.6">11.6 <B>get_word_chars</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.7">11.7 <B>what_char</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.8">11.8 <B>what_column</B></A>
+<LI><A HREF="jedfuns-11.html#ss11.9">11.9 <B>what_line</B></A>
+</UL>
+<P>
+<H2><A NAME="toc12">12.</A> <A HREF="jedfuns-12.html">Keymaps and Key Input Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-12.html#ss12.1">12.1 <B>ALT_CHAR</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.2">12.2 <B>CURRENT_KBD_COMMAND</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.3">12.3 <B>DEC_8BIT_HACK</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.4">12.4 <B>DEFINING_MACRO</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.5">12.5 <B>EXECUTING_MACRO</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.6">12.6 <B>FN_CHAR</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.7">12.7 <B>IGNORE_USER_ABORT</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.8">12.8 <B>KILL_LINE_FEATURE</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.9">12.9 <B>LASTKEY</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.10">12.10 <B>LAST_CHAR</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.11">12.11 <B>LAST_KEY</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.12">12.12 <B>META_CHAR</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.13">12.13 <B>X_LAST_KEYSYM</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.14">12.14 <B>buffer_keystring</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.15">12.15 <B>definekey</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.16">12.16 <B>dump_bindings</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.17">12.17 <B>enable_flow_control</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.18">12.18 <B>flush_input</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.19">12.19 <B>get_key_function</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.20">12.20 <B>getkey</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.21">12.21 <B>input_pending</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.22">12.22 <B>keymap_p</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.23">12.23 <B>make_keymap</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.24">12.24 <B>map_input</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.25">12.25 <B>prefix_argument</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.26">12.26 <B>set_abort_char</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.27">12.27 <B>set_current_kbd_command</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.28">12.28 <B>set_prefix_argument</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.29">12.29 <B>setkey</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.30">12.30 <B>undefinekey</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.31">12.31 <B>ungetkey</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.32">12.32 <B>unsetkey</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.33">12.33 <B>use_keymap</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.34">12.34 <B>what_keymap</B></A>
+<LI><A HREF="jedfuns-12.html#ss12.35">12.35 <B>which_key</B></A>
+</UL>
+<P>
+<H2><A NAME="toc13">13.</A> <A HREF="jedfuns-13.html">Mark and Spot Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-13.html#ss13.1">13.1 <B>create_line_mark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.2">13.2 <B>create_user_mark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.3">13.3 <B>dupmark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.4">13.4 <B>goto_user_mark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.5">13.5 <B>is_user_mark_in_narrow</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.6">13.6 <B>is_visible_mark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.7">13.7 <B>markp</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.8">13.8 <B>move_user_mark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.9">13.9 <B>pop_mark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.10">13.10 <B>pop_spot</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.11">13.11 <B>push_mark</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.12">13.12 <B>push_spot</B></A>
+<LI><A HREF="jedfuns-13.html#ss13.13">13.13 <B>user_mark_buffer</B></A>
+</UL>
+<P>
+<H2><A NAME="toc14">14.</A> <A HREF="jedfuns-14.html">Menu Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-14.html#ss14.1">14.1 <B>enable_top_status_line</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.2">14.2 <B>menu_append_item</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.3">14.3 <B>menu_append_popup</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.4">14.4 <B>menu_append_separator</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.5">14.5 <B>menu_copy_menu</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.6">14.6 <B>menu_create_menu_bar</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.7">14.7 <B>menu_delete_item</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.8">14.8 <B>menu_delete_items</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.9">14.9 <B>menu_set_init_menubar_callback</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.10">14.10 <B>menu_set_menu_bar_prefix</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.11">14.11 <B>menu_set_object_available</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.12">14.12 <B>menu_set_select_menubar_callback</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.13">14.13 <B>menu_set_select_popup_callback</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.14">14.14 <B>menu_use_menu_bar</B></A>
+<LI><A HREF="jedfuns-14.html#ss14.15">14.15 <B>set_top_status_line</B></A>
+</UL>
+<P>
+<H2><A NAME="toc15">15.</A> <A HREF="jedfuns-15.html">Message Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-15.html#ss15.1">15.1 <B>MESSAGE_BUFFER</B></A>
+<LI><A HREF="jedfuns-15.html#ss15.2">15.2 <B>beep</B></A>
+<LI><A HREF="jedfuns-15.html#ss15.3">15.3 <B>clear_message</B></A>
+<LI><A HREF="jedfuns-15.html#ss15.4">15.4 <B>flush</B></A>
+<LI><A HREF="jedfuns-15.html#ss15.5">15.5 <B>tt_send</B></A>
+</UL>
+<P>
+<H2><A NAME="toc16">16.</A> <A HREF="jedfuns-16.html">Mini-Buffer Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-16.html#ss16.1">16.1 <B>MINIBUFFER_ACTIVE</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.2">16.2 <B>_add_completion</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.3">16.3 <B>add_completion</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.4">16.4 <B>get_mini_response</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.5">16.5 <B>get_y_or_n</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.6">16.6 <B>get_yes_no</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.7">16.7 <B>read_mini</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.8">16.8 <B>read_with_completion</B></A>
+<LI><A HREF="jedfuns-16.html#ss16.9">16.9 <B>set_expansion_hook</B></A>
+</UL>
+<P>
+<H2><A NAME="toc17">17.</A> <A HREF="jedfuns-17.html">Mouse Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-17.html#ss17.1">17.1 <B>gpm_disable_mouse</B></A>
+<LI><A HREF="jedfuns-17.html#ss17.2">17.2 <B>mouse_get_event_info</B></A>
+<LI><A HREF="jedfuns-17.html#ss17.3">17.3 <B>mouse_map_buttons</B></A>
+<LI><A HREF="jedfuns-17.html#ss17.4">17.4 <B>mouse_set_current_window</B></A>
+<LI><A HREF="jedfuns-17.html#ss17.5">17.5 <B>mouse_set_default_hook</B></A>
+</UL>
+<P>
+<H2><A NAME="toc18">18.</A> <A HREF="jedfuns-18.html">Subprocess Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-18.html#ss18.1">18.1 <B>get_process_input</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.2">18.2 <B>kill_process</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.3">18.3 <B>open_process</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.4">18.4 <B>process_mark</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.5">18.5 <B>process_query_at_exit</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.6">18.6 <B>run_shell_cmd</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.7">18.7 <B>send_process</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.8">18.8 <B>send_process_eof</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.9">18.9 <B>set_process</B></A>
+<LI><A HREF="jedfuns-18.html#ss18.10">18.10 <B>signal_process</B></A>
+</UL>
+<P>
+<H2><A NAME="toc19">19.</A> <A HREF="jedfuns-19.html">Rectangle Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-19.html#ss19.1">19.1 <B>blank_rect</B></A>
+<LI><A HREF="jedfuns-19.html#ss19.2">19.2 <B>copy_rect</B></A>
+<LI><A HREF="jedfuns-19.html#ss19.3">19.3 <B>insert_rect</B></A>
+<LI><A HREF="jedfuns-19.html#ss19.4">19.4 <B>kill_rect</B></A>
+<LI><A HREF="jedfuns-19.html#ss19.5">19.5 <B>open_rect</B></A>
+</UL>
+<P>
+<H2><A NAME="toc20">20.</A> <A HREF="jedfuns-20.html">Functions that Involve Regions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-20.html#ss20.1">20.1 <B>KILL_ARRAY_SIZE</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.2">20.2 <B>append_region_to_file</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.3">20.3 <B>append_region_to_kill_array</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.4">20.4 <B>bufsubstr</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.5">20.5 <B>check_region</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.6">20.6 <B>copy_region</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.7">20.7 <B>copy_region_to_kill_array</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.8">20.8 <B>count_narrows</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.9">20.9 <B>narrow</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.10">20.10 <B>narrow_to_region</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.11">20.11 <B>pipe_region</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.12">20.12 <B>pop_narrow</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.13">20.13 <B>push_narrow</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.14">20.14 <B>translate_region</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.15">20.15 <B>widen</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.16">20.16 <B>widen_buffer</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.17">20.17 <B>widen_region</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.18">20.18 <B>write_region_to_file</B></A>
+<LI><A HREF="jedfuns-20.html#ss20.19">20.19 <B>xform_region</B></A>
+</UL>
+<P>
+<H2><A NAME="toc21">21.</A> <A HREF="jedfuns-21.html">Search/Replace Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-21.html#ss21.1">21.1 <B>CASE_SEARCH</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.2">21.2 <B>bfind</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.3">21.3 <B>bfind_char</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.4">21.4 <B>bol_bsearch</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.5">21.5 <B>bol_bsearch_char</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.6">21.6 <B>bol_fsearch</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.7">21.7 <B>bol_fsearch_char</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.8">21.8 <B>bsearch</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.9">21.9 <B>bsearch_char</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.10">21.10 <B>ffind</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.11">21.11 <B>ffind_char</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.12">21.12 <B>find_matching_delimiter</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.13">21.13 <B>fsearch</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.14">21.14 <B>fsearch_char</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.15">21.15 <B>looking_at</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.16">21.16 <B>re_bsearch</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.17">21.17 <B>re_fsearch</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.18">21.18 <B>regexp_nth_match</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.19">21.19 <B>replace</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.20">21.20 <B>replace_chars</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.21">21.21 <B>replace_match</B></A>
+<LI><A HREF="jedfuns-21.html#ss21.22">21.22 <B>search_file</B></A>
+</UL>
+<P>
+<H2><A NAME="toc22">22.</A> <A HREF="jedfuns-22.html">Syntax Highlighting and Parsing Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-22.html#ss22.1">22.1 <B>build_highlight_table</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.2">22.2 <B>create_syntax_table</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.3">22.3 <B>define_highlight_rule</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.4">22.4 <B>define_keywords_n</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.5">22.5 <B>define_syntax</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.6">22.6 <B>enable_highlight_cache</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.7">22.7 <B>parse_to_point</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.8">22.8 <B>set_fortran_comment_chars</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.9">22.9 <B>set_highlight_cache_dir</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.10">22.10 <B>set_syntax_flags</B></A>
+<LI><A HREF="jedfuns-22.html#ss22.11">22.11 <B>use_syntax_table</B></A>
+</UL>
+<P>
+<H2><A NAME="toc23">23.</A> <A HREF="jedfuns-23.html">Terminal Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-23.html#ss23.1">23.1 <B>CHEAP_VIDEO</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.2">23.2 <B>IGNORE_BEEP</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.3">23.3 <B>SCREEN_HEIGHT</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.4">23.4 <B>SCREEN_WIDTH</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.5">23.5 <B>TERM_BLINK_MODE</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.6">23.6 <B>TERM_CANNOT_INSERT</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.7">23.7 <B>TERM_CANNOT_SCROLL</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.8">23.8 <B>USE_ANSI_COLORS</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.9">23.9 <B>get_termcap_string</B></A>
+<LI><A HREF="jedfuns-23.html#ss23.10">23.10 <B>set_term_vtxxx</B></A>
+</UL>
+<P>
+<H2><A NAME="toc24">24.</A> <A HREF="jedfuns-24.html">Display and Window Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-24.html#ss24.1">24.1 <B>BLINK</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.2">24.2 <B>DISPLAY_EIGHT_BIT</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.3">24.3 <B>DISPLAY_TIME</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.4">24.4 <B>DOLLAR_CHARACTER</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.5">24.5 <B>HIGHLIGHT</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.6">24.6 <B>HORIZONTAL_PAN</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.7">24.7 <B>LINENUMBERS</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.8">24.8 <B>LINE_NUMBERS</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.9">24.9 <B>Simulate_Graphic_Chars</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.10">24.10 <B>Status_Line_String</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.11">24.11 <B>TAB</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.12">24.12 <B>TAB_DEFAULT</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.13">24.13 <B>TOP_WINDOW_ROW</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.14">24.14 <B>WANT_EOB</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.15">24.15 <B>WANT_SYNTAX_HIGHLIGHT</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.16">24.16 <B>blink_match</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.17">24.17 <B>enlargewin</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.18">24.18 <B>nwindows</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.19">24.19 <B>onewindow</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.20">24.20 <B>otherwindow</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.21">24.21 <B>recenter</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.22">24.22 <B>set_status_line</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.23">24.23 <B>splitwindow</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.24">24.24 <B>update</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.25">24.25 <B>w132</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.26">24.26 <B>w80</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.27">24.27 <B>window_info</B></A>
+<LI><A HREF="jedfuns-24.html#ss24.28">24.28 <B>window_line</B></A>
+</UL>
+<P>
+<H2><A NAME="toc25">25.</A> <A HREF="jedfuns-25.html">Miscellaneous Functions</A></H2>
+
+<UL>
+<LI><A HREF="jedfuns-25.html#ss25.1">25.1 <B>BATCH</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.2">25.2 <B>JED_ROOT</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.3">25.3 <B>_jed_secure_mode</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.4">25.4 <B>_jed_version</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.5">25.5 <B>_jed_version_string</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.6">25.6 <B>call</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.7">25.7 <B>core_dump</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.8">25.8 <B>define_word</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.9">25.9 <B>exit_jed</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.10">25.10 <B>get_doc_string</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.11">25.11 <B>get_last_macro</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.12">25.12 <B>get_passwd_info</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.13">25.13 <B>getpid</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.14">25.14 <B>is_internal</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.15">25.15 <B>quit_jed</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.16">25.16 <B>random</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.17">25.17 <B>set_line_readonly</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.18">25.18 <B>suspend</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.19">25.19 <B>usleep</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.20">25.20 <B>vms_get_help</B></A>
+<LI><A HREF="jedfuns-25.html#ss25.21">25.21 <B>vms_send_mail</B></A>
+</UL>
+<HR>
+<A HREF="jedfuns-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>

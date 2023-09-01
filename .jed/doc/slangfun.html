@@ -1,0 +1,534 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.66">
+ <TITLE> S-Lang Library Intrinsic Function Reference (v2.3.0)</TITLE>
+ <LINK HREF="slangfun-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="slangfun-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1> S-Lang Library Intrinsic Function Reference (v2.3.0)</H1>
+
+<H2>John E. Davis &lt;www.jedsoft.org&gt;</H2> Sep 14, 2014
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="slangfun-1.html">Preface</A></H2>
+
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="slangfun-2.html">Data Types</A></H2>
+
+<UL>
+<LI><A NAME="toc2.1">2.1</A> <A HREF="slangfun-2.html#ss2.1"><B>Assoc_Type</B></A>
+<LI><A NAME="toc2.2">2.2</A> <A HREF="slangfun-2.html#ss2.2"><B>File_Type</B></A>
+<LI><A NAME="toc2.3">2.3</A> <A HREF="slangfun-2.html#ss2.3"><B>List_Type</B></A>
+<LI><A NAME="toc2.4">2.4</A> <A HREF="slangfun-2.html#ss2.4"><B>String_Type</B></A>
+<LI><A NAME="toc2.5">2.5</A> <A HREF="slangfun-2.html#ss2.5"><B>Struct_Type</B></A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="slangfun-3.html">Array Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc3.1">3.1</A> <A HREF="slangfun-3.html#ss3.1"><B>all</B></A>
+<LI><A NAME="toc3.2">3.2</A> <A HREF="slangfun-3.html#ss3.2"><B>any</B></A>
+<LI><A NAME="toc3.3">3.3</A> <A HREF="slangfun-3.html#ss3.3"><B>array_info</B></A>
+<LI><A NAME="toc3.4">3.4</A> <A HREF="slangfun-3.html#ss3.4"><B>array_map</B></A>
+<LI><A NAME="toc3.5">3.5</A> <A HREF="slangfun-3.html#ss3.5"><B>array_reverse</B></A>
+<LI><A NAME="toc3.6">3.6</A> <A HREF="slangfun-3.html#ss3.6"><B>array_shape</B></A>
+<LI><A NAME="toc3.7">3.7</A> <A HREF="slangfun-3.html#ss3.7"><B>array_sort</B></A>
+<LI><A NAME="toc3.8">3.8</A> <A HREF="slangfun-3.html#ss3.8"><B>array_swap</B></A>
+<LI><A NAME="toc3.9">3.9</A> <A HREF="slangfun-3.html#ss3.9"><B>cumsum</B></A>
+<LI><A NAME="toc3.10">3.10</A> <A HREF="slangfun-3.html#ss3.10"><B>get_default_sort_method</B></A>
+<LI><A NAME="toc3.11">3.11</A> <A HREF="slangfun-3.html#ss3.11"><B>init_char_array</B></A>
+<LI><A NAME="toc3.12">3.12</A> <A HREF="slangfun-3.html#ss3.12"><B>_isnull</B></A>
+<LI><A NAME="toc3.13">3.13</A> <A HREF="slangfun-3.html#ss3.13"><B>length</B></A>
+<LI><A NAME="toc3.14">3.14</A> <A HREF="slangfun-3.html#ss3.14"><B>max</B></A>
+<LI><A NAME="toc3.15">3.15</A> <A HREF="slangfun-3.html#ss3.15"><B>maxabs</B></A>
+<LI><A NAME="toc3.16">3.16</A> <A HREF="slangfun-3.html#ss3.16"><B>min</B></A>
+<LI><A NAME="toc3.17">3.17</A> <A HREF="slangfun-3.html#ss3.17"><B>minabs</B></A>
+<LI><A NAME="toc3.18">3.18</A> <A HREF="slangfun-3.html#ss3.18"><B>_reshape</B></A>
+<LI><A NAME="toc3.19">3.19</A> <A HREF="slangfun-3.html#ss3.19"><B>reshape</B></A>
+<LI><A NAME="toc3.20">3.20</A> <A HREF="slangfun-3.html#ss3.20"><B>set_default_sort_method</B></A>
+<LI><A NAME="toc3.21">3.21</A> <A HREF="slangfun-3.html#ss3.21"><B>sum</B></A>
+<LI><A NAME="toc3.22">3.22</A> <A HREF="slangfun-3.html#ss3.22"><B>sumsq</B></A>
+<LI><A NAME="toc3.23">3.23</A> <A HREF="slangfun-3.html#ss3.23"><B>transpose</B></A>
+<LI><A NAME="toc3.24">3.24</A> <A HREF="slangfun-3.html#ss3.24"><B>where</B></A>
+<LI><A NAME="toc3.25">3.25</A> <A HREF="slangfun-3.html#ss3.25"><B>wherediff</B></A>
+<LI><A NAME="toc3.26">3.26</A> <A HREF="slangfun-3.html#ss3.26"><B>wherefirst</B></A>
+<LI><A NAME="toc3.27">3.27</A> <A HREF="slangfun-3.html#ss3.27"><B>wherefirstmax</B></A>
+<LI><A NAME="toc3.28">3.28</A> <A HREF="slangfun-3.html#ss3.28"><B>wherefirstmin</B></A>
+<LI><A NAME="toc3.29">3.29</A> <A HREF="slangfun-3.html#ss3.29"><B>wherelast</B></A>
+<LI><A NAME="toc3.30">3.30</A> <A HREF="slangfun-3.html#ss3.30"><B>wherelastmax</B></A>
+<LI><A NAME="toc3.31">3.31</A> <A HREF="slangfun-3.html#ss3.31"><B>wherelastmin</B></A>
+<LI><A NAME="toc3.32">3.32</A> <A HREF="slangfun-3.html#ss3.32"><B>wherenot</B></A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="slangfun-4.html">Associative Array Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc4.1">4.1</A> <A HREF="slangfun-4.html#ss4.1"><B>assoc_delete_key</B></A>
+<LI><A NAME="toc4.2">4.2</A> <A HREF="slangfun-4.html#ss4.2"><B>assoc_get_keys</B></A>
+<LI><A NAME="toc4.3">4.3</A> <A HREF="slangfun-4.html#ss4.3"><B>assoc_get_values</B></A>
+<LI><A NAME="toc4.4">4.4</A> <A HREF="slangfun-4.html#ss4.4"><B>assoc_key_exists</B></A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="slangfun-5.html">Functions that Operate on Strings</A></H2>
+
+<UL>
+<LI><A NAME="toc5.1">5.1</A> <A HREF="slangfun-5.html#ss5.1"><B>count_char_occurrences</B></A>
+<LI><A NAME="toc5.2">5.2</A> <A HREF="slangfun-5.html#ss5.2"><B>create_delimited_string</B></A>
+<LI><A NAME="toc5.3">5.3</A> <A HREF="slangfun-5.html#ss5.3"><B>extract_element</B></A>
+<LI><A NAME="toc5.4">5.4</A> <A HREF="slangfun-5.html#ss5.4"><B>glob_to_regexp</B></A>
+<LI><A NAME="toc5.5">5.5</A> <A HREF="slangfun-5.html#ss5.5"><B>is_list_element</B></A>
+<LI><A NAME="toc5.6">5.6</A> <A HREF="slangfun-5.html#ss5.6"><B>is_substr</B></A>
+<LI><A NAME="toc5.7">5.7</A> <A HREF="slangfun-5.html#ss5.7"><B>make_printable_string</B></A>
+<LI><A NAME="toc5.8">5.8</A> <A HREF="slangfun-5.html#ss5.8"><B>Sprintf</B></A>
+<LI><A NAME="toc5.9">5.9</A> <A HREF="slangfun-5.html#ss5.9"><B>strbskipchar</B></A>
+<LI><A NAME="toc5.10">5.10</A> <A HREF="slangfun-5.html#ss5.10"><B>sprintf</B></A>
+<LI><A NAME="toc5.11">5.11</A> <A HREF="slangfun-5.html#ss5.11"><B>sscanf</B></A>
+<LI><A NAME="toc5.12">5.12</A> <A HREF="slangfun-5.html#ss5.12"><B>strbytelen</B></A>
+<LI><A NAME="toc5.13">5.13</A> <A HREF="slangfun-5.html#ss5.13"><B>strbytesub</B></A>
+<LI><A NAME="toc5.14">5.14</A> <A HREF="slangfun-5.html#ss5.14"><B>strcat</B></A>
+<LI><A NAME="toc5.15">5.15</A> <A HREF="slangfun-5.html#ss5.15"><B>strcharlen</B></A>
+<LI><A NAME="toc5.16">5.16</A> <A HREF="slangfun-5.html#ss5.16"><B>strchop</B></A>
+<LI><A NAME="toc5.17">5.17</A> <A HREF="slangfun-5.html#ss5.17"><B>strchopr</B></A>
+<LI><A NAME="toc5.18">5.18</A> <A HREF="slangfun-5.html#ss5.18"><B>strcmp</B></A>
+<LI><A NAME="toc5.19">5.19</A> <A HREF="slangfun-5.html#ss5.19"><B>strcompress</B></A>
+<LI><A NAME="toc5.20">5.20</A> <A HREF="slangfun-5.html#ss5.20"><B>string_match</B></A>
+<LI><A NAME="toc5.21">5.21</A> <A HREF="slangfun-5.html#ss5.21"><B>string_match_nth</B></A>
+<LI><A NAME="toc5.22">5.22</A> <A HREF="slangfun-5.html#ss5.22"><B>string_matches</B></A>
+<LI><A NAME="toc5.23">5.23</A> <A HREF="slangfun-5.html#ss5.23"><B>strjoin</B></A>
+<LI><A NAME="toc5.24">5.24</A> <A HREF="slangfun-5.html#ss5.24"><B>strlen</B></A>
+<LI><A NAME="toc5.25">5.25</A> <A HREF="slangfun-5.html#ss5.25"><B>strlow</B></A>
+<LI><A NAME="toc5.26">5.26</A> <A HREF="slangfun-5.html#ss5.26"><B>strnbytecmp</B></A>
+<LI><A NAME="toc5.27">5.27</A> <A HREF="slangfun-5.html#ss5.27"><B>strncharcmp</B></A>
+<LI><A NAME="toc5.28">5.28</A> <A HREF="slangfun-5.html#ss5.28"><B>strncmp</B></A>
+<LI><A NAME="toc5.29">5.29</A> <A HREF="slangfun-5.html#ss5.29"><B>strreplace</B></A>
+<LI><A NAME="toc5.30">5.30</A> <A HREF="slangfun-5.html#ss5.30"><B>strskipbytes</B></A>
+<LI><A NAME="toc5.31">5.31</A> <A HREF="slangfun-5.html#ss5.31"><B>strskipchar</B></A>
+<LI><A NAME="toc5.32">5.32</A> <A HREF="slangfun-5.html#ss5.32"><B>strsub</B></A>
+<LI><A NAME="toc5.33">5.33</A> <A HREF="slangfun-5.html#ss5.33"><B>strtok</B></A>
+<LI><A NAME="toc5.34">5.34</A> <A HREF="slangfun-5.html#ss5.34"><B>strtrans</B></A>
+<LI><A NAME="toc5.35">5.35</A> <A HREF="slangfun-5.html#ss5.35"><B>strtrim</B></A>
+<LI><A NAME="toc5.36">5.36</A> <A HREF="slangfun-5.html#ss5.36"><B>strtrim_beg</B></A>
+<LI><A NAME="toc5.37">5.37</A> <A HREF="slangfun-5.html#ss5.37"><B>strtrim_end</B></A>
+<LI><A NAME="toc5.38">5.38</A> <A HREF="slangfun-5.html#ss5.38"><B>strup</B></A>
+<LI><A NAME="toc5.39">5.39</A> <A HREF="slangfun-5.html#ss5.39"><B>str_delete_chars</B></A>
+<LI><A NAME="toc5.40">5.40</A> <A HREF="slangfun-5.html#ss5.40"><B>str_quote_string</B></A>
+<LI><A NAME="toc5.41">5.41</A> <A HREF="slangfun-5.html#ss5.41"><B>str_replace</B></A>
+<LI><A NAME="toc5.42">5.42</A> <A HREF="slangfun-5.html#ss5.42"><B>str_uncomment_string</B></A>
+<LI><A NAME="toc5.43">5.43</A> <A HREF="slangfun-5.html#ss5.43"><B>substr</B></A>
+<LI><A NAME="toc5.44">5.44</A> <A HREF="slangfun-5.html#ss5.44"><B>substrbytes</B></A>
+</UL>
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="slangfun-6.html">Functions that Operate on Binary Strings</A></H2>
+
+<UL>
+<LI><A NAME="toc6.1">6.1</A> <A HREF="slangfun-6.html#ss6.1"><B>array_to_bstring</B></A>
+<LI><A NAME="toc6.2">6.2</A> <A HREF="slangfun-6.html#ss6.2"><B>bstring_to_array</B></A>
+<LI><A NAME="toc6.3">6.3</A> <A HREF="slangfun-6.html#ss6.3"><B>bstrcat</B></A>
+<LI><A NAME="toc6.4">6.4</A> <A HREF="slangfun-6.html#ss6.4"><B>bstrjoin</B></A>
+<LI><A NAME="toc6.5">6.5</A> <A HREF="slangfun-6.html#ss6.5"><B>bstrlen</B></A>
+<LI><A NAME="toc6.6">6.6</A> <A HREF="slangfun-6.html#ss6.6"><B>count_byte_occurrences</B></A>
+<LI><A NAME="toc6.7">6.7</A> <A HREF="slangfun-6.html#ss6.7"><B>is_substrbytes</B></A>
+<LI><A NAME="toc6.8">6.8</A> <A HREF="slangfun-6.html#ss6.8"><B>pack</B></A>
+<LI><A NAME="toc6.9">6.9</A> <A HREF="slangfun-6.html#ss6.9"><B>pad_pack_format</B></A>
+<LI><A NAME="toc6.10">6.10</A> <A HREF="slangfun-6.html#ss6.10"><B>sizeof_pack</B></A>
+<LI><A NAME="toc6.11">6.11</A> <A HREF="slangfun-6.html#ss6.11"><B>unpack</B></A>
+</UL>
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="slangfun-7.html">Functions that Manipulate Structures</A></H2>
+
+<UL>
+<LI><A NAME="toc7.1">7.1</A> <A HREF="slangfun-7.html#ss7.1"><B>__add_binary</B></A>
+<LI><A NAME="toc7.2">7.2</A> <A HREF="slangfun-7.html#ss7.2"><B>__add_string</B></A>
+<LI><A NAME="toc7.3">7.3</A> <A HREF="slangfun-7.html#ss7.3"><B>__add_typecast</B></A>
+<LI><A NAME="toc7.4">7.4</A> <A HREF="slangfun-7.html#ss7.4"><B>__add_unary</B></A>
+<LI><A NAME="toc7.5">7.5</A> <A HREF="slangfun-7.html#ss7.5"><B>get_struct_field</B></A>
+<LI><A NAME="toc7.6">7.6</A> <A HREF="slangfun-7.html#ss7.6"><B>get_struct_field_names</B></A>
+<LI><A NAME="toc7.7">7.7</A> <A HREF="slangfun-7.html#ss7.7"><B>_is_struct_type</B></A>
+<LI><A NAME="toc7.8">7.8</A> <A HREF="slangfun-7.html#ss7.8"><B>is_struct_type</B></A>
+<LI><A NAME="toc7.9">7.9</A> <A HREF="slangfun-7.html#ss7.9"><B>_push_struct_field_values</B></A>
+<LI><A NAME="toc7.10">7.10</A> <A HREF="slangfun-7.html#ss7.10"><B>set_struct_field</B></A>
+<LI><A NAME="toc7.11">7.11</A> <A HREF="slangfun-7.html#ss7.11"><B>set_struct_fields</B></A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="slangfun-8.html">Functions that Create and Manipulate Lists</A></H2>
+
+<UL>
+<LI><A NAME="toc8.1">8.1</A> <A HREF="slangfun-8.html#ss8.1"><B>list_append</B></A>
+<LI><A NAME="toc8.2">8.2</A> <A HREF="slangfun-8.html#ss8.2"><B>list_concat</B></A>
+<LI><A NAME="toc8.3">8.3</A> <A HREF="slangfun-8.html#ss8.3"><B>list_delete</B></A>
+<LI><A NAME="toc8.4">8.4</A> <A HREF="slangfun-8.html#ss8.4"><B>list_insert</B></A>
+<LI><A NAME="toc8.5">8.5</A> <A HREF="slangfun-8.html#ss8.5"><B>list_join</B></A>
+<LI><A NAME="toc8.6">8.6</A> <A HREF="slangfun-8.html#ss8.6"><B>list_new</B></A>
+<LI><A NAME="toc8.7">8.7</A> <A HREF="slangfun-8.html#ss8.7"><B>list_pop</B></A>
+<LI><A NAME="toc8.8">8.8</A> <A HREF="slangfun-8.html#ss8.8"><B>list_reverse</B></A>
+<LI><A NAME="toc8.9">8.9</A> <A HREF="slangfun-8.html#ss8.9"><B>list_to_array</B></A>
+</UL>
+<P>
+<H2><A NAME="toc9">9.</A> <A HREF="slangfun-9.html">Informational Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc9.1">9.1</A> <A HREF="slangfun-9.html#ss9.1"><B>add_doc_file</B></A>
+<LI><A NAME="toc9.2">9.2</A> <A HREF="slangfun-9.html#ss9.2"><B>_apropos</B></A>
+<LI><A NAME="toc9.3">9.3</A> <A HREF="slangfun-9.html#ss9.3"><B>__FILE__</B></A>
+<LI><A NAME="toc9.4">9.4</A> <A HREF="slangfun-9.html#ss9.4"><B>_function_name</B></A>
+<LI><A NAME="toc9.5">9.5</A> <A HREF="slangfun-9.html#ss9.5"><B>__get_defined_symbols</B></A>
+<LI><A NAME="toc9.6">9.6</A> <A HREF="slangfun-9.html#ss9.6"><B>get_doc_files</B></A>
+<LI><A NAME="toc9.7">9.7</A> <A HREF="slangfun-9.html#ss9.7"><B>get_doc_string_from_file</B></A>
+<LI><A NAME="toc9.8">9.8</A> <A HREF="slangfun-9.html#ss9.8"><B>_get_namespaces</B></A>
+<LI><A NAME="toc9.9">9.9</A> <A HREF="slangfun-9.html#ss9.9"><B>is_defined</B></A>
+<LI><A NAME="toc9.10">9.10</A> <A HREF="slangfun-9.html#ss9.10"><B>__is_initialized</B></A>
+<LI><A NAME="toc9.11">9.11</A> <A HREF="slangfun-9.html#ss9.11"><B>_NARGS</B></A>
+<LI><A NAME="toc9.12">9.12</A> <A HREF="slangfun-9.html#ss9.12"><B>set_doc_files</B></A>
+<LI><A NAME="toc9.13">9.13</A> <A HREF="slangfun-9.html#ss9.13"><B>_slang_doc_dir</B></A>
+<LI><A NAME="toc9.14">9.14</A> <A HREF="slangfun-9.html#ss9.14"><B>_slang_version</B></A>
+<LI><A NAME="toc9.15">9.15</A> <A HREF="slangfun-9.html#ss9.15"><B>_slang_version_string</B></A>
+</UL>
+<P>
+<H2><A NAME="toc10">10.</A> <A HREF="slangfun-10.html">Mathematical Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc10.1">10.1</A> <A HREF="slangfun-10.html#ss10.1"><B>abs</B></A>
+<LI><A NAME="toc10.2">10.2</A> <A HREF="slangfun-10.html#ss10.2"><B>acos</B></A>
+<LI><A NAME="toc10.3">10.3</A> <A HREF="slangfun-10.html#ss10.3"><B>acosh</B></A>
+<LI><A NAME="toc10.4">10.4</A> <A HREF="slangfun-10.html#ss10.4"><B>asin</B></A>
+<LI><A NAME="toc10.5">10.5</A> <A HREF="slangfun-10.html#ss10.5"><B>asinh</B></A>
+<LI><A NAME="toc10.6">10.6</A> <A HREF="slangfun-10.html#ss10.6"><B>atan</B></A>
+<LI><A NAME="toc10.7">10.7</A> <A HREF="slangfun-10.html#ss10.7"><B>atan2</B></A>
+<LI><A NAME="toc10.8">10.8</A> <A HREF="slangfun-10.html#ss10.8"><B>atanh</B></A>
+<LI><A NAME="toc10.9">10.9</A> <A HREF="slangfun-10.html#ss10.9"><B>ceil</B></A>
+<LI><A NAME="toc10.10">10.10</A> <A HREF="slangfun-10.html#ss10.10"><B>Conj</B></A>
+<LI><A NAME="toc10.11">10.11</A> <A HREF="slangfun-10.html#ss10.11"><B>cos</B></A>
+<LI><A NAME="toc10.12">10.12</A> <A HREF="slangfun-10.html#ss10.12"><B>cosh</B></A>
+<LI><A NAME="toc10.13">10.13</A> <A HREF="slangfun-10.html#ss10.13"><B>_diff</B></A>
+<LI><A NAME="toc10.14">10.14</A> <A HREF="slangfun-10.html#ss10.14"><B>exp</B></A>
+<LI><A NAME="toc10.15">10.15</A> <A HREF="slangfun-10.html#ss10.15"><B>expm1</B></A>
+<LI><A NAME="toc10.16">10.16</A> <A HREF="slangfun-10.html#ss10.16"><B>feqs</B></A>
+<LI><A NAME="toc10.17">10.17</A> <A HREF="slangfun-10.html#ss10.17"><B>fgteqs</B></A>
+<LI><A NAME="toc10.18">10.18</A> <A HREF="slangfun-10.html#ss10.18"><B>floor</B></A>
+<LI><A NAME="toc10.19">10.19</A> <A HREF="slangfun-10.html#ss10.19"><B>flteqs</B></A>
+<LI><A NAME="toc10.20">10.20</A> <A HREF="slangfun-10.html#ss10.20"><B>fneqs</B></A>
+<LI><A NAME="toc10.21">10.21</A> <A HREF="slangfun-10.html#ss10.21"><B>get_float_format</B></A>
+<LI><A NAME="toc10.22">10.22</A> <A HREF="slangfun-10.html#ss10.22"><B>hypot</B></A>
+<LI><A NAME="toc10.23">10.23</A> <A HREF="slangfun-10.html#ss10.23"><B>Imag</B></A>
+<LI><A NAME="toc10.24">10.24</A> <A HREF="slangfun-10.html#ss10.24"><B>isinf</B></A>
+<LI><A NAME="toc10.25">10.25</A> <A HREF="slangfun-10.html#ss10.25"><B>isnan</B></A>
+<LI><A NAME="toc10.26">10.26</A> <A HREF="slangfun-10.html#ss10.26"><B>_isneg</B></A>
+<LI><A NAME="toc10.27">10.27</A> <A HREF="slangfun-10.html#ss10.27"><B>_isnonneg</B></A>
+<LI><A NAME="toc10.28">10.28</A> <A HREF="slangfun-10.html#ss10.28"><B>_ispos</B></A>
+<LI><A NAME="toc10.29">10.29</A> <A HREF="slangfun-10.html#ss10.29"><B>log</B></A>
+<LI><A NAME="toc10.30">10.30</A> <A HREF="slangfun-10.html#ss10.30"><B>log10</B></A>
+<LI><A NAME="toc10.31">10.31</A> <A HREF="slangfun-10.html#ss10.31"><B>log1p</B></A>
+<LI><A NAME="toc10.32">10.32</A> <A HREF="slangfun-10.html#ss10.32"><B>_max</B></A>
+<LI><A NAME="toc10.33">10.33</A> <A HREF="slangfun-10.html#ss10.33"><B>_min</B></A>
+<LI><A NAME="toc10.34">10.34</A> <A HREF="slangfun-10.html#ss10.34"><B>mul2</B></A>
+<LI><A NAME="toc10.35">10.35</A> <A HREF="slangfun-10.html#ss10.35"><B>nint</B></A>
+<LI><A NAME="toc10.36">10.36</A> <A HREF="slangfun-10.html#ss10.36"><B>polynom</B></A>
+<LI><A NAME="toc10.37">10.37</A> <A HREF="slangfun-10.html#ss10.37"><B>Real</B></A>
+<LI><A NAME="toc10.38">10.38</A> <A HREF="slangfun-10.html#ss10.38"><B>round</B></A>
+<LI><A NAME="toc10.39">10.39</A> <A HREF="slangfun-10.html#ss10.39"><B>set_float_format</B></A>
+<LI><A NAME="toc10.40">10.40</A> <A HREF="slangfun-10.html#ss10.40"><B>sign</B></A>
+<LI><A NAME="toc10.41">10.41</A> <A HREF="slangfun-10.html#ss10.41"><B>sin</B></A>
+<LI><A NAME="toc10.42">10.42</A> <A HREF="slangfun-10.html#ss10.42"><B>sincos</B></A>
+<LI><A NAME="toc10.43">10.43</A> <A HREF="slangfun-10.html#ss10.43"><B>sinh</B></A>
+<LI><A NAME="toc10.44">10.44</A> <A HREF="slangfun-10.html#ss10.44"><B>sqr</B></A>
+<LI><A NAME="toc10.45">10.45</A> <A HREF="slangfun-10.html#ss10.45"><B>sqrt</B></A>
+<LI><A NAME="toc10.46">10.46</A> <A HREF="slangfun-10.html#ss10.46"><B>tan</B></A>
+<LI><A NAME="toc10.47">10.47</A> <A HREF="slangfun-10.html#ss10.47"><B>tanh</B></A>
+</UL>
+<P>
+<H2><A NAME="toc11">11.</A> <A HREF="slangfun-11.html">Message and Error Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc11.1">11.1</A> <A HREF="slangfun-11.html#ss11.1"><B>errno</B></A>
+<LI><A NAME="toc11.2">11.2</A> <A HREF="slangfun-11.html#ss11.2"><B>errno_string</B></A>
+<LI><A NAME="toc11.3">11.3</A> <A HREF="slangfun-11.html#ss11.3"><B>error</B></A>
+<LI><A NAME="toc11.4">11.4</A> <A HREF="slangfun-11.html#ss11.4"><B>__get_exception_info</B></A>
+<LI><A NAME="toc11.5">11.5</A> <A HREF="slangfun-11.html#ss11.5"><B>message</B></A>
+<LI><A NAME="toc11.6">11.6</A> <A HREF="slangfun-11.html#ss11.6"><B>new_exception</B></A>
+<LI><A NAME="toc11.7">11.7</A> <A HREF="slangfun-11.html#ss11.7"><B>usage</B></A>
+<LI><A NAME="toc11.8">11.8</A> <A HREF="slangfun-11.html#ss11.8"><B>verror</B></A>
+<LI><A NAME="toc11.9">11.9</A> <A HREF="slangfun-11.html#ss11.9"><B>vmessage</B></A>
+</UL>
+<P>
+<H2><A NAME="toc12">12.</A> <A HREF="slangfun-12.html">Time and Date Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc12.1">12.1</A> <A HREF="slangfun-12.html#ss12.1"><B>ctime</B></A>
+<LI><A NAME="toc12.2">12.2</A> <A HREF="slangfun-12.html#ss12.2"><B>gmtime</B></A>
+<LI><A NAME="toc12.3">12.3</A> <A HREF="slangfun-12.html#ss12.3"><B>localtime</B></A>
+<LI><A NAME="toc12.4">12.4</A> <A HREF="slangfun-12.html#ss12.4"><B>mktime</B></A>
+<LI><A NAME="toc12.5">12.5</A> <A HREF="slangfun-12.html#ss12.5"><B>strftime</B></A>
+<LI><A NAME="toc12.6">12.6</A> <A HREF="slangfun-12.html#ss12.6"><B>_tic</B></A>
+<LI><A NAME="toc12.7">12.7</A> <A HREF="slangfun-12.html#ss12.7"><B>tic</B></A>
+<LI><A NAME="toc12.8">12.8</A> <A HREF="slangfun-12.html#ss12.8"><B>_time</B></A>
+<LI><A NAME="toc12.9">12.9</A> <A HREF="slangfun-12.html#ss12.9"><B>time</B></A>
+<LI><A NAME="toc12.10">12.10</A> <A HREF="slangfun-12.html#ss12.10"><B>timegm</B></A>
+<LI><A NAME="toc12.11">12.11</A> <A HREF="slangfun-12.html#ss12.11"><B>times</B></A>
+<LI><A NAME="toc12.12">12.12</A> <A HREF="slangfun-12.html#ss12.12"><B>_toc</B></A>
+<LI><A NAME="toc12.13">12.13</A> <A HREF="slangfun-12.html#ss12.13"><B>toc</B></A>
+</UL>
+<P>
+<H2><A NAME="toc13">13.</A> <A HREF="slangfun-13.html">Data-Type Conversion Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc13.1">13.1</A> <A HREF="slangfun-13.html#ss13.1"><B>atof</B></A>
+<LI><A NAME="toc13.2">13.2</A> <A HREF="slangfun-13.html#ss13.2"><B>atoi</B></A>
+<LI><A NAME="toc13.3">13.3</A> <A HREF="slangfun-13.html#ss13.3"><B>atol</B></A>
+<LI><A NAME="toc13.4">13.4</A> <A HREF="slangfun-13.html#ss13.4"><B>atoll</B></A>
+<LI><A NAME="toc13.5">13.5</A> <A HREF="slangfun-13.html#ss13.5"><B>char</B></A>
+<LI><A NAME="toc13.6">13.6</A> <A HREF="slangfun-13.html#ss13.6"><B>define_case</B></A>
+<LI><A NAME="toc13.7">13.7</A> <A HREF="slangfun-13.html#ss13.7"><B>double</B></A>
+<LI><A NAME="toc13.8">13.8</A> <A HREF="slangfun-13.html#ss13.8"><B>int</B></A>
+<LI><A NAME="toc13.9">13.9</A> <A HREF="slangfun-13.html#ss13.9"><B>integer</B></A>
+<LI><A NAME="toc13.10">13.10</A> <A HREF="slangfun-13.html#ss13.10"><B>isalnum, isalpha, isascii, isblank, iscntrl, isdigit, isgraph, islower, isprint, ispunct, isspace, isupper, isxdigit</B></A>
+<LI><A NAME="toc13.11">13.11</A> <A HREF="slangfun-13.html#ss13.11"><B>_slang_guess_type</B></A>
+<LI><A NAME="toc13.12">13.12</A> <A HREF="slangfun-13.html#ss13.12"><B>string</B></A>
+<LI><A NAME="toc13.13">13.13</A> <A HREF="slangfun-13.html#ss13.13"><B>tolower</B></A>
+<LI><A NAME="toc13.14">13.14</A> <A HREF="slangfun-13.html#ss13.14"><B>toupper</B></A>
+<LI><A NAME="toc13.15">13.15</A> <A HREF="slangfun-13.html#ss13.15"><B>typecast</B></A>
+<LI><A NAME="toc13.16">13.16</A> <A HREF="slangfun-13.html#ss13.16"><B>_typeof</B></A>
+<LI><A NAME="toc13.17">13.17</A> <A HREF="slangfun-13.html#ss13.17"><B>typeof</B></A>
+</UL>
+<P>
+<H2><A NAME="toc14">14.</A> <A HREF="slangfun-14.html">Stdio File I/O Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc14.1">14.1</A> <A HREF="slangfun-14.html#ss14.1"><B>clearerr</B></A>
+<LI><A NAME="toc14.2">14.2</A> <A HREF="slangfun-14.html#ss14.2"><B>fclose</B></A>
+<LI><A NAME="toc14.3">14.3</A> <A HREF="slangfun-14.html#ss14.3"><B>fdopen</B></A>
+<LI><A NAME="toc14.4">14.4</A> <A HREF="slangfun-14.html#ss14.4"><B>feof</B></A>
+<LI><A NAME="toc14.5">14.5</A> <A HREF="slangfun-14.html#ss14.5"><B>ferror</B></A>
+<LI><A NAME="toc14.6">14.6</A> <A HREF="slangfun-14.html#ss14.6"><B>fflush</B></A>
+<LI><A NAME="toc14.7">14.7</A> <A HREF="slangfun-14.html#ss14.7"><B>fgets</B></A>
+<LI><A NAME="toc14.8">14.8</A> <A HREF="slangfun-14.html#ss14.8"><B>fgetslines</B></A>
+<LI><A NAME="toc14.9">14.9</A> <A HREF="slangfun-14.html#ss14.9"><B>fopen</B></A>
+<LI><A NAME="toc14.10">14.10</A> <A HREF="slangfun-14.html#ss14.10"><B>fprintf</B></A>
+<LI><A NAME="toc14.11">14.11</A> <A HREF="slangfun-14.html#ss14.11"><B>fputs</B></A>
+<LI><A NAME="toc14.12">14.12</A> <A HREF="slangfun-14.html#ss14.12"><B>fputslines</B></A>
+<LI><A NAME="toc14.13">14.13</A> <A HREF="slangfun-14.html#ss14.13"><B>fread</B></A>
+<LI><A NAME="toc14.14">14.14</A> <A HREF="slangfun-14.html#ss14.14"><B>fread_bytes</B></A>
+<LI><A NAME="toc14.15">14.15</A> <A HREF="slangfun-14.html#ss14.15"><B>fseek</B></A>
+<LI><A NAME="toc14.16">14.16</A> <A HREF="slangfun-14.html#ss14.16"><B>ftell</B></A>
+<LI><A NAME="toc14.17">14.17</A> <A HREF="slangfun-14.html#ss14.17"><B>fwrite</B></A>
+<LI><A NAME="toc14.18">14.18</A> <A HREF="slangfun-14.html#ss14.18"><B>pclose</B></A>
+<LI><A NAME="toc14.19">14.19</A> <A HREF="slangfun-14.html#ss14.19"><B>popen</B></A>
+<LI><A NAME="toc14.20">14.20</A> <A HREF="slangfun-14.html#ss14.20"><B>printf</B></A>
+<LI><A NAME="toc14.21">14.21</A> <A HREF="slangfun-14.html#ss14.21"><B>setvbuf</B></A>
+</UL>
+<P>
+<H2><A NAME="toc15">15.</A> <A HREF="slangfun-15.html">Low-level POSIX I/O functions</A></H2>
+
+<UL>
+<LI><A NAME="toc15.1">15.1</A> <A HREF="slangfun-15.html#ss15.1"><B>close</B></A>
+<LI><A NAME="toc15.2">15.2</A> <A HREF="slangfun-15.html#ss15.2"><B>_close</B></A>
+<LI><A NAME="toc15.3">15.3</A> <A HREF="slangfun-15.html#ss15.3"><B>dup_fd</B></A>
+<LI><A NAME="toc15.4">15.4</A> <A HREF="slangfun-15.html#ss15.4"><B>dup2_fd</B></A>
+<LI><A NAME="toc15.5">15.5</A> <A HREF="slangfun-15.html#ss15.5"><B>_fileno</B></A>
+<LI><A NAME="toc15.6">15.6</A> <A HREF="slangfun-15.html#ss15.6"><B>fileno</B></A>
+<LI><A NAME="toc15.7">15.7</A> <A HREF="slangfun-15.html#ss15.7"><B>isatty</B></A>
+<LI><A NAME="toc15.8">15.8</A> <A HREF="slangfun-15.html#ss15.8"><B>lseek</B></A>
+<LI><A NAME="toc15.9">15.9</A> <A HREF="slangfun-15.html#ss15.9"><B>open</B></A>
+<LI><A NAME="toc15.10">15.10</A> <A HREF="slangfun-15.html#ss15.10"><B>read</B></A>
+<LI><A NAME="toc15.11">15.11</A> <A HREF="slangfun-15.html#ss15.11"><B>write</B></A>
+</UL>
+<P>
+<H2><A NAME="toc16">16.</A> <A HREF="slangfun-16.html">Signal Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc16.1">16.1</A> <A HREF="slangfun-16.html#ss16.1"><B>alarm</B></A>
+<LI><A NAME="toc16.2">16.2</A> <A HREF="slangfun-16.html#ss16.2"><B>getitimer</B></A>
+<LI><A NAME="toc16.3">16.3</A> <A HREF="slangfun-16.html#ss16.3"><B>setitimer</B></A>
+<LI><A NAME="toc16.4">16.4</A> <A HREF="slangfun-16.html#ss16.4"><B>signal</B></A>
+<LI><A NAME="toc16.5">16.5</A> <A HREF="slangfun-16.html#ss16.5"><B>sigprocmask</B></A>
+<LI><A NAME="toc16.6">16.6</A> <A HREF="slangfun-16.html#ss16.6"><B>sigsuspend</B></A>
+</UL>
+<P>
+<H2><A NAME="toc17">17.</A> <A HREF="slangfun-17.html">Directory Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc17.1">17.1</A> <A HREF="slangfun-17.html#ss17.1"><B>access</B></A>
+<LI><A NAME="toc17.2">17.2</A> <A HREF="slangfun-17.html#ss17.2"><B>chdir</B></A>
+<LI><A NAME="toc17.3">17.3</A> <A HREF="slangfun-17.html#ss17.3"><B>chmod</B></A>
+<LI><A NAME="toc17.4">17.4</A> <A HREF="slangfun-17.html#ss17.4"><B>chown</B></A>
+<LI><A NAME="toc17.5">17.5</A> <A HREF="slangfun-17.html#ss17.5"><B>getcwd</B></A>
+<LI><A NAME="toc17.6">17.6</A> <A HREF="slangfun-17.html#ss17.6"><B>hardlink</B></A>
+<LI><A NAME="toc17.7">17.7</A> <A HREF="slangfun-17.html#ss17.7"><B>lchown</B></A>
+<LI><A NAME="toc17.8">17.8</A> <A HREF="slangfun-17.html#ss17.8"><B>listdir</B></A>
+<LI><A NAME="toc17.9">17.9</A> <A HREF="slangfun-17.html#ss17.9"><B>lstat_file</B></A>
+<LI><A NAME="toc17.10">17.10</A> <A HREF="slangfun-17.html#ss17.10"><B>mkdir</B></A>
+<LI><A NAME="toc17.11">17.11</A> <A HREF="slangfun-17.html#ss17.11"><B>readlink</B></A>
+<LI><A NAME="toc17.12">17.12</A> <A HREF="slangfun-17.html#ss17.12"><B>remove</B></A>
+<LI><A NAME="toc17.13">17.13</A> <A HREF="slangfun-17.html#ss17.13"><B>rename</B></A>
+<LI><A NAME="toc17.14">17.14</A> <A HREF="slangfun-17.html#ss17.14"><B>rmdir</B></A>
+<LI><A NAME="toc17.15">17.15</A> <A HREF="slangfun-17.html#ss17.15"><B>stat_file</B></A>
+<LI><A NAME="toc17.16">17.16</A> <A HREF="slangfun-17.html#ss17.16"><B>stat_is</B></A>
+<LI><A NAME="toc17.17">17.17</A> <A HREF="slangfun-17.html#ss17.17"><B>stat_mode_to_string</B></A>
+<LI><A NAME="toc17.18">17.18</A> <A HREF="slangfun-17.html#ss17.18"><B>symlink</B></A>
+<LI><A NAME="toc17.19">17.19</A> <A HREF="slangfun-17.html#ss17.19"><B>utime</B></A>
+</UL>
+<P>
+<H2><A NAME="toc18">18.</A> <A HREF="slangfun-18.html">Functions that Parse Filenames</A></H2>
+
+<UL>
+<LI><A NAME="toc18.1">18.1</A> <A HREF="slangfun-18.html#ss18.1"><B>path_basename</B></A>
+<LI><A NAME="toc18.2">18.2</A> <A HREF="slangfun-18.html#ss18.2"><B>path_basename_sans_extname</B></A>
+<LI><A NAME="toc18.3">18.3</A> <A HREF="slangfun-18.html#ss18.3"><B>path_concat</B></A>
+<LI><A NAME="toc18.4">18.4</A> <A HREF="slangfun-18.html#ss18.4"><B>path_dirname</B></A>
+<LI><A NAME="toc18.5">18.5</A> <A HREF="slangfun-18.html#ss18.5"><B>path_extname</B></A>
+<LI><A NAME="toc18.6">18.6</A> <A HREF="slangfun-18.html#ss18.6"><B>path_get_delimiter</B></A>
+<LI><A NAME="toc18.7">18.7</A> <A HREF="slangfun-18.html#ss18.7"><B>path_is_absolute</B></A>
+<LI><A NAME="toc18.8">18.8</A> <A HREF="slangfun-18.html#ss18.8"><B>path_sans_extname</B></A>
+</UL>
+<P>
+<H2><A NAME="toc19">19.</A> <A HREF="slangfun-19.html">System Call Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc19.1">19.1</A> <A HREF="slangfun-19.html#ss19.1"><B>getegid</B></A>
+<LI><A NAME="toc19.2">19.2</A> <A HREF="slangfun-19.html#ss19.2"><B>geteuid</B></A>
+<LI><A NAME="toc19.3">19.3</A> <A HREF="slangfun-19.html#ss19.3"><B>getgid</B></A>
+<LI><A NAME="toc19.4">19.4</A> <A HREF="slangfun-19.html#ss19.4"><B>getpgid</B></A>
+<LI><A NAME="toc19.5">19.5</A> <A HREF="slangfun-19.html#ss19.5"><B>getpgrp</B></A>
+<LI><A NAME="toc19.6">19.6</A> <A HREF="slangfun-19.html#ss19.6"><B>getpid</B></A>
+<LI><A NAME="toc19.7">19.7</A> <A HREF="slangfun-19.html#ss19.7"><B>getppid</B></A>
+<LI><A NAME="toc19.8">19.8</A> <A HREF="slangfun-19.html#ss19.8"><B>getpriority</B></A>
+<LI><A NAME="toc19.9">19.9</A> <A HREF="slangfun-19.html#ss19.9"><B>getrusage</B></A>
+<LI><A NAME="toc19.10">19.10</A> <A HREF="slangfun-19.html#ss19.10"><B>getsid</B></A>
+<LI><A NAME="toc19.11">19.11</A> <A HREF="slangfun-19.html#ss19.11"><B>getuid</B></A>
+<LI><A NAME="toc19.12">19.12</A> <A HREF="slangfun-19.html#ss19.12"><B>kill</B></A>
+<LI><A NAME="toc19.13">19.13</A> <A HREF="slangfun-19.html#ss19.13"><B>killpg</B></A>
+<LI><A NAME="toc19.14">19.14</A> <A HREF="slangfun-19.html#ss19.14"><B>mkfifo</B></A>
+<LI><A NAME="toc19.15">19.15</A> <A HREF="slangfun-19.html#ss19.15"><B>setgid</B></A>
+<LI><A NAME="toc19.16">19.16</A> <A HREF="slangfun-19.html#ss19.16"><B>setpgid</B></A>
+<LI><A NAME="toc19.17">19.17</A> <A HREF="slangfun-19.html#ss19.17"><B>setpriority</B></A>
+<LI><A NAME="toc19.18">19.18</A> <A HREF="slangfun-19.html#ss19.18"><B>setsid</B></A>
+<LI><A NAME="toc19.19">19.19</A> <A HREF="slangfun-19.html#ss19.19"><B>setuid</B></A>
+<LI><A NAME="toc19.20">19.20</A> <A HREF="slangfun-19.html#ss19.20"><B>sleep</B></A>
+<LI><A NAME="toc19.21">19.21</A> <A HREF="slangfun-19.html#ss19.21"><B>system</B></A>
+<LI><A NAME="toc19.22">19.22</A> <A HREF="slangfun-19.html#ss19.22"><B>system_intr</B></A>
+<LI><A NAME="toc19.23">19.23</A> <A HREF="slangfun-19.html#ss19.23"><B>umask</B></A>
+<LI><A NAME="toc19.24">19.24</A> <A HREF="slangfun-19.html#ss19.24"><B>uname</B></A>
+</UL>
+<P>
+<H2><A NAME="toc20">20.</A> <A HREF="slangfun-20.html">Eval Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc20.1">20.1</A> <A HREF="slangfun-20.html#ss20.1"><B>_$</B></A>
+<LI><A NAME="toc20.2">20.2</A> <A HREF="slangfun-20.html#ss20.2"><B>autoload</B></A>
+<LI><A NAME="toc20.3">20.3</A> <A HREF="slangfun-20.html#ss20.3"><B>byte_compile_file</B></A>
+<LI><A NAME="toc20.4">20.4</A> <A HREF="slangfun-20.html#ss20.4"><B>eval</B></A>
+<LI><A NAME="toc20.5">20.5</A> <A HREF="slangfun-20.html#ss20.5"><B>evalfile</B></A>
+<LI><A NAME="toc20.6">20.6</A> <A HREF="slangfun-20.html#ss20.6"><B>get_slang_load_path</B></A>
+<LI><A NAME="toc20.7">20.7</A> <A HREF="slangfun-20.html#ss20.7"><B>set_slang_load_path</B></A>
+</UL>
+<P>
+<H2><A NAME="toc21">21.</A> <A HREF="slangfun-21.html">Qualifier Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc21.1">21.1</A> <A HREF="slangfun-21.html#ss21.1"><B>qualifier</B></A>
+<LI><A NAME="toc21.2">21.2</A> <A HREF="slangfun-21.html#ss21.2"><B>__qualifiers</B></A>
+<LI><A NAME="toc21.3">21.3</A> <A HREF="slangfun-21.html#ss21.3"><B>qualifier_exists</B></A>
+</UL>
+<P>
+<H2><A NAME="toc22">22.</A> <A HREF="slangfun-22.html">Module Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc22.1">22.1</A> <A HREF="slangfun-22.html#ss22.1"><B>get_import_module_path</B></A>
+<LI><A NAME="toc22.2">22.2</A> <A HREF="slangfun-22.html#ss22.2"><B>import</B></A>
+<LI><A NAME="toc22.3">22.3</A> <A HREF="slangfun-22.html#ss22.3"><B>set_import_module_path</B></A>
+</UL>
+<P>
+<H2><A NAME="toc23">23.</A> <A HREF="slangfun-23.html">Debugging Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc23.1">23.1</A> <A HREF="slangfun-23.html#ss23.1"><B>_bofeof_info</B></A>
+<LI><A NAME="toc23.2">23.2</A> <A HREF="slangfun-23.html#ss23.2"><B>_boseos_info</B></A>
+<LI><A NAME="toc23.3">23.3</A> <A HREF="slangfun-23.html#ss23.3"><B>_clear_error</B></A>
+<LI><A NAME="toc23.4">23.4</A> <A HREF="slangfun-23.html#ss23.4"><B>_get_frame_info</B></A>
+<LI><A NAME="toc23.5">23.5</A> <A HREF="slangfun-23.html#ss23.5"><B>_get_frame_variable</B></A>
+<LI><A NAME="toc23.6">23.6</A> <A HREF="slangfun-23.html#ss23.6"><B>_set_bof_handler</B></A>
+<LI><A NAME="toc23.7">23.7</A> <A HREF="slangfun-23.html#ss23.7"><B>_set_bos_handler</B></A>
+<LI><A NAME="toc23.8">23.8</A> <A HREF="slangfun-23.html#ss23.8"><B>_set_eof_handler</B></A>
+<LI><A NAME="toc23.9">23.9</A> <A HREF="slangfun-23.html#ss23.9"><B>_set_eos_handler</B></A>
+<LI><A NAME="toc23.10">23.10</A> <A HREF="slangfun-23.html#ss23.10"><B>_slangtrace</B></A>
+<LI><A NAME="toc23.11">23.11</A> <A HREF="slangfun-23.html#ss23.11"><B>_traceback</B></A>
+<LI><A NAME="toc23.12">23.12</A> <A HREF="slangfun-23.html#ss23.12"><B>_trace_function</B></A>
+<LI><A NAME="toc23.13">23.13</A> <A HREF="slangfun-23.html#ss23.13"><B>_use_frame_namespace</B></A>
+</UL>
+<P>
+<H2><A NAME="toc24">24.</A> <A HREF="slangfun-24.html">Stack Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc24.1">24.1</A> <A HREF="slangfun-24.html#ss24.1"><B>dup</B></A>
+<LI><A NAME="toc24.2">24.2</A> <A HREF="slangfun-24.html#ss24.2"><B>exch</B></A>
+<LI><A NAME="toc24.3">24.3</A> <A HREF="slangfun-24.html#ss24.3"><B>pop</B></A>
+<LI><A NAME="toc24.4">24.4</A> <A HREF="slangfun-24.html#ss24.4"><B>__pop_args</B></A>
+<LI><A NAME="toc24.5">24.5</A> <A HREF="slangfun-24.html#ss24.5"><B>__pop_list</B></A>
+<LI><A NAME="toc24.6">24.6</A> <A HREF="slangfun-24.html#ss24.6"><B>_pop_n</B></A>
+<LI><A NAME="toc24.7">24.7</A> <A HREF="slangfun-24.html#ss24.7"><B>_print_stack</B></A>
+<LI><A NAME="toc24.8">24.8</A> <A HREF="slangfun-24.html#ss24.8"><B>__push_args</B></A>
+<LI><A NAME="toc24.9">24.9</A> <A HREF="slangfun-24.html#ss24.9"><B>__push_list</B></A>
+<LI><A NAME="toc24.10">24.10</A> <A HREF="slangfun-24.html#ss24.10"><B>_stkdepth</B></A>
+<LI><A NAME="toc24.11">24.11</A> <A HREF="slangfun-24.html#ss24.11"><B>_stk_reverse</B></A>
+<LI><A NAME="toc24.12">24.12</A> <A HREF="slangfun-24.html#ss24.12"><B>_stk_roll</B></A>
+</UL>
+<P>
+<H2><A NAME="toc25">25.</A> <A HREF="slangfun-25.html">Functions that deal with the S-Lang readline interface</A></H2>
+
+<UL>
+<LI><A NAME="toc25.1">25.1</A> <A HREF="slangfun-25.html#ss25.1"><B>rline_bolp</B></A>
+<LI><A NAME="toc25.2">25.2</A> <A HREF="slangfun-25.html#ss25.2"><B>rline_call</B></A>
+<LI><A NAME="toc25.3">25.3</A> <A HREF="slangfun-25.html#ss25.3"><B>rline_del</B></A>
+<LI><A NAME="toc25.4">25.4</A> <A HREF="slangfun-25.html#ss25.4"><B>rline_eolp</B></A>
+<LI><A NAME="toc25.5">25.5</A> <A HREF="slangfun-25.html#ss25.5"><B>rline_getkey</B></A>
+<LI><A NAME="toc25.6">25.6</A> <A HREF="slangfun-25.html#ss25.6"><B>rline_get_edit_width</B></A>
+<LI><A NAME="toc25.7">25.7</A> <A HREF="slangfun-25.html#ss25.7"><B>rline_get_history</B></A>
+<LI><A NAME="toc25.8">25.8</A> <A HREF="slangfun-25.html#ss25.8"><B>rline_get_line</B></A>
+<LI><A NAME="toc25.9">25.9</A> <A HREF="slangfun-25.html#ss25.9"><B>rline_get_point</B></A>
+<LI><A NAME="toc25.10">25.10</A> <A HREF="slangfun-25.html#ss25.10"><B>rline_input_pending</B></A>
+<LI><A NAME="toc25.11">25.11</A> <A HREF="slangfun-25.html#ss25.11"><B>rline_ins</B></A>
+<LI><A NAME="toc25.12">25.12</A> <A HREF="slangfun-25.html#ss25.12"><B>rline_setkey</B></A>
+<LI><A NAME="toc25.13">25.13</A> <A HREF="slangfun-25.html#ss25.13"><B>rline_set_completion_callback</B></A>
+<LI><A NAME="toc25.14">25.14</A> <A HREF="slangfun-25.html#ss25.14"><B>rline_set_history</B></A>
+<LI><A NAME="toc25.15">25.15</A> <A HREF="slangfun-25.html#ss25.15"><B>rline_set_line</B></A>
+<LI><A NAME="toc25.16">25.16</A> <A HREF="slangfun-25.html#ss25.16"><B>rline_set_list_completions_callback</B></A>
+<LI><A NAME="toc25.17">25.17</A> <A HREF="slangfun-25.html#ss25.17"><B>rline_set_point</B></A>
+<LI><A NAME="toc25.18">25.18</A> <A HREF="slangfun-25.html#ss25.18"><B>rline_unsetkey</B></A>
+</UL>
+<P>
+<H2><A NAME="toc26">26.</A> <A HREF="slangfun-26.html">Miscellaneous Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc26.1">26.1</A> <A HREF="slangfun-26.html#ss26.1"><B>_auto_declare</B></A>
+<LI><A NAME="toc26.2">26.2</A> <A HREF="slangfun-26.html#ss26.2"><B>__class_id</B></A>
+<LI><A NAME="toc26.3">26.3</A> <A HREF="slangfun-26.html#ss26.3"><B>__class_type</B></A>
+<LI><A NAME="toc26.4">26.4</A> <A HREF="slangfun-26.html#ss26.4"><B>current_namespace</B></A>
+<LI><A NAME="toc26.5">26.5</A> <A HREF="slangfun-26.html#ss26.5"><B>__datatype</B></A>
+<LI><A NAME="toc26.6">26.6</A> <A HREF="slangfun-26.html#ss26.6"><B>_eqs</B></A>
+<LI><A NAME="toc26.7">26.7</A> <A HREF="slangfun-26.html#ss26.7"><B>get_environ</B></A>
+<LI><A NAME="toc26.8">26.8</A> <A HREF="slangfun-26.html#ss26.8"><B>getenv</B></A>
+<LI><A NAME="toc26.9">26.9</A> <A HREF="slangfun-26.html#ss26.9"><B>__get_reference</B></A>
+<LI><A NAME="toc26.10">26.10</A> <A HREF="slangfun-26.html#ss26.10"><B>implements</B></A>
+<LI><A NAME="toc26.11">26.11</A> <A HREF="slangfun-26.html#ss26.11"><B>__is_callable</B></A>
+<LI><A NAME="toc26.12">26.12</A> <A HREF="slangfun-26.html#ss26.12"><B>__is_datatype_numeric</B></A>
+<LI><A NAME="toc26.13">26.13</A> <A HREF="slangfun-26.html#ss26.13"><B>__is_numeric</B></A>
+<LI><A NAME="toc26.14">26.14</A> <A HREF="slangfun-26.html#ss26.14"><B>__is_same</B></A>
+<LI><A NAME="toc26.15">26.15</A> <A HREF="slangfun-26.html#ss26.15"><B>putenv</B></A>
+<LI><A NAME="toc26.16">26.16</A> <A HREF="slangfun-26.html#ss26.16"><B>__set_argc_argv</B></A>
+<LI><A NAME="toc26.17">26.17</A> <A HREF="slangfun-26.html#ss26.17"><B>_slang_install_prefix</B></A>
+<LI><A NAME="toc26.18">26.18</A> <A HREF="slangfun-26.html#ss26.18"><B>_slang_utf8_ok</B></A>
+<LI><A NAME="toc26.19">26.19</A> <A HREF="slangfun-26.html#ss26.19"><B>__tmp</B></A>
+<LI><A NAME="toc26.20">26.20</A> <A HREF="slangfun-26.html#ss26.20"><B>__uninitialize</B></A>
+<LI><A NAME="toc26.21">26.21</A> <A HREF="slangfun-26.html#ss26.21"><B>use_namespace</B></A>
+</UL>
+<HR>
+<A HREF="slangfun-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>

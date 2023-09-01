@@ -1,0 +1,67 @@
+<HTML><HEAD></head><BODY><CENTER><a href="https://www.retrogametreasure.com/refer/Timot-CBKFEICU" title="Retro video games delivered to your door every month!"target="_blank"><img src="https://d3a1v57rabk2hm.cloudfront.net/retrogametreasurecom/betterman_mobile/images/Logo-17.png?ts=1528471106&host=www.retrogametreasure.com" width="480" height="100" border="0" alt="Retro video games delivered to your door every month!" align="middle"><br><font size="5">Click above to get retro games delivered to your door ever month!</font></a></CENTER></body></html><HTML>
+
+
+
+<html>
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/ng13bea.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:59 GMT -->
+<head>
+<meta name=keywords content="X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - set_mouse_action (mac_name), intraSYS international, Clipper CGI, ClipX.Lib, eMailX, MsgX, Norton Guides, Apache, xBase++, IS2WCGI.DLL, dBase, FoxPro, Norton Guides, vDbase, C/C++, ng2Html By Dave Pearson">
+<meta name=description content="On-line Norton Guide for BHELP On-Line: CBRIEF Macro Help - set_mouse_action (mac_name)">
+<title>X-Hacker.org- BHELP On-Line: CBRIEF Macro Help - set_mouse_action (mac_name)</title>
+<style type="text/css">
+<!--
+A
+{
+color:black;
+text-decoration:none
+}
+a:hover
+{
+background-color:blue;
+color:white;
+}
+-->
+</style>
+</head>
+<body bgcolor="white">
+<a href="http://www.x-hacker.org/" target="_top"><img align="right" alt="http://www.X-Hacker.org" border="0" src="../../images/x-hacker.gif"></a>
+<a href="ng134b4.html">[&lt;&lt;Previous Entry]</a> <a href="ng2ac.html">[^^Up^^]</a> <a href="ng14076.html">[Next Entry&gt;&gt;]</a> <a href="index-2.html">[Menu]</a> <a href="credits.html">[About The Guide]</a>
+<hr><pre>
+set_mouse_action (mac_name)
+
+     <B>Usage:</B> Sets the name of the macro called to handle mouse events.
+            This could have been called "assign_to_mouse", because it
+            behaves just like an <U>assign_to_key</U>.  Mouse action handlers
+            are associated with keyboards, so a new one must be named
+            with every <U>keyboard_push</U>, and it is disposed of with
+            <U>keyboard_pop</U>.  If you want to just inherit the current
+            mouse action, then use <U>inq_mouse_action</U> BEFORE calling
+            <U>keyboard_push</U>, then use <U>set_mouse_action</U> to attach it
+            to the new keyboard.  The section on Mouse Event
+            Processing in the manual has a few good examples of
+            building mouse handlers.
+
+            Mouse action macros receive up to 4 .ints. as parameters.
+            See the <U>Mouse Events</U> table for details:
+
+               mouse_action(event, modifier, parm2, parm3)
+
+            event:      A mouse event type
+            modifier:   Keyboard modifier flags
+            parm2:      Depends on event type
+            parm3:      Depends on event type
+
+<B>Parameters:</B> Mac_name .string. is the name of the new mouse event
+            handler.
+
+   <B>Returns:</B> Nothing
+
+</pre><hr><b>See Also:</b> <a href="ngbc90.html">inq_mouse_action</a> <a href="nga218.html">inq_btn2_action</a> <a href="ng12f2d.html">set_btn2_action</a> <a href="ng182ea.html">Mouse Events</a> <pre></pre><hr><center><b>
+<font size="-1">Online resources provided by: <a href="http://www.x-hacker.org/" target="_top">http://www.X-Hacker.org</a> ---  NG 2 HTML conversion by <a href="http://www.davep.org/" target="_top">Dave Pearson</a></b></center>
+<hr>
+
+
+<!-- Mirrored from www.x-hacker.org/ng/cbrief/ng13bea.php by HTTrack Website Copier/3.x [XR&CO'2005], Thu, 02 Jun 2005 21:14:59 GMT -->
+</html>
+

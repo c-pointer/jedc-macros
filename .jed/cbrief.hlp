@@ -1,0 +1,21 @@
+% -*- chelp -*- ; cols = 20;
+Basic Commands in CBRIEF Mode. Use "[F10] long_help" for all keys and macros.
++[A+H],[^H] Help    | [A+X] Exit        | [^Q] Halt/Abort   | [^L] Redraw
+*[F10] Command line | [F11] DIRED       | [F12] JED menu
++[A+E] Edit file    | [A+W] Write file  | [A+B] Buffer list |[A+O] Change fname
++[A+G] Go to Line   | [A+D] Delete line |[A+0..9] Drop mark |[A+J] Jump to mark
+*[A+K] Del to EOL   | [^K] Del to BOL   | [^D] Scroll Dn    | [^E] Scroll Up
++[^C]/[Gray+] Copy  | [^X]/[Gray-] Cut  | [^V]/[Ins] Paste  | [Del] Delete
++[A+M] Select text  | [A+L] Select lines| [A+C] Select cols | [^R] Repeat
++[A+S] Search fwd   | [A+F] Search again|[^F] Src again back|[A+T] Replace
+*[^S] Search bwd    | [^F] Search agn bk|[C-F5] Toggle CSens|[C-F6] Toggle regex
++[F1] Change Win    | [F2] Resize Win   | [F3] Create Win   | [F4] Delete Win
++[A+U]/[Gray*] Undo | [^U] Redo
+*[A+N] Next Buf     | [A+P] Prev Buf    | [^-] Del Buf
+*[F9] Build (make)  | [^P] Errors       | [^N] Next Error
+*[^G] Routines      | [^F1] Help on word under the cursor
+*[S+Tab] Slide out  | [^O>] Comment     | [^O<] Uncomment
+*[A+Q] Inserts key
+*[^Z] Zoom (1 win)
+*[A+I] Toggle Ins
++[F7] Remember | [F8] Playback

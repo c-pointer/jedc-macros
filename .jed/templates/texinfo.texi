@@ -1,0 +1,82 @@
+@c texinfo example
+\input texinfo
+@settitle Sample Manual 1.0
+
+@copying
+This manual is for GNU Sample (version @value{VERSION}, @value{UPDATED}),
+which is an example in the Texinfo documentation.
+
+Copyright @copyright{} @{year} Free Software Foundation, Inc.
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+``GNU Free Documentation License''.
+@end quotation
+@end copying
+
+@c --------------------------------------------------------------------
+
+@titlepage
+@title Sample Title
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@c --------------------------------------------------------------------
+@node Top
+@top GNU Sample
+
+This manual is for GNU Sample
+(version @value{VERSION}, @value{UPDATED}).
+
+@menu
+* First Chapter::	The first chapter is the only chapter in this sample.
+* Index::			Complete index.
+@end menu
+
+@c --------------------------------------------------------------------
+@node First Chapter
+@chapter First Chapter
+
+@cindex chapter, first
+This is the first chapter.
+@cindex index entry, another
+
+Here is a numbered list.
+
+@enumerate
+@item
+This is the first item.
+
+@item
+This is the second item.
+@end enumerate
+
+@c --------------------------------------------------------------------
+@node First Section
+@section First Section
+
+First section of first chapter.
+
+@c --------------------------------------------------------------------
+@node Second Section
+@section Second Section
+
+Second section of first chapter.
+
+@c --------------------------------------------------------------------
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@c --------------------------------------------------------------------
+@bye
+

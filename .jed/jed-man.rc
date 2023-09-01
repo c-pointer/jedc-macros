@@ -1,0 +1,6 @@
+# jed-man configuration file
+
+add-source-path /lanfs/src/slang/doc/tm/rtl/*.tm
+add-source-path /lanfs/src/jedc/doc/tm/rtl/*.tm
+
+cache-file = ${JED_HOME}/data/cache/jed-man.cache

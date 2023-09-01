@@ -1,0 +1,57 @@
+-----------------------------------------------------------------------------------------
+Users files
+
+term.sl:
+user's file to fix any terminal problem
+
+local.sl:
+user's file to additional settings to jedrc.sl
+
+-----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+Source Header
+
+%	{descrption}
+%
+%	Copyleft (ͻ) 2016-2022 Nicholas Christopoulos
+%	Released under the terms of the GNU GPL version 3 or later.
+%
+%	Install: add the following line in your jedrc
+%		require("...");
+%
+%	see site.sl
+
+-----------------------------------------------------------------------------------------
+Notes on JEDs documantation
+
+== Exported Function
+
+%!%+
+%\function{name}
+%\synopsis{short description}
+%\usage{syntax}
+%\description
+%	full description. \em{xx}
+%	see \sfun{other-function} or \var{other-variable}
+%\example
+%	example section
+%#v+
+%	verbatime code
+%#v-
+%\notes
+%	bla bla
+%\seealso{a, b, c}
+%!%-
+
+== Global Variable
+
+%!%+
+%\variable{name}
+%\synopsis{short descriptiom}
+%\usage{syntax}
+%\description
+%	full description.
+%\seealso{a, b, c}
+%!%-
+

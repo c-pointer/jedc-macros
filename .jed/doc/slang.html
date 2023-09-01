@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.72">
+ <TITLE> A Guide to the S-Lang Language (v2.3.0)</TITLE>
+ <LINK HREF="slang-1.html" REL=next>
+
+
+</HEAD>
+<BODY>
+<A HREF="slang-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1> A Guide to the S-Lang Language (v2.3.0)</H1>
+
+<H2>John E. Davis &lt;www.jedsoft.org&gt;</H2> Apr 18, 2020
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="slang-1.html">Preface</A></H2>
+
+<UL>
+<LI><A NAME="toc1.1">1.1</A> <A HREF="slang-1.html#ss1.1">A Brief History of <B>S-Lang</B></A>
+<LI><A NAME="toc1.2">1.2</A> <A HREF="slang-1.html#ss1.2">Acknowledgements</A>
+</UL>
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="slang-2.html">Introduction </A></H2>
+
+<UL>
+<LI><A NAME="toc2.1">2.1</A> <A HREF="slang-2.html#ss2.1">slsh -- The <B>S-Lang</B> shell</A>
+<LI><A NAME="toc2.2">2.2</A> <A HREF="slang-2.html#ss2.2">Language Features</A>
+<LI><A NAME="toc2.3">2.3</A> <A HREF="slang-2.html#ss2.3">Data Types and Operators</A>
+<LI><A NAME="toc2.4">2.4</A> <A HREF="slang-2.html#ss2.4">Statements and Functions</A>
+<LI><A NAME="toc2.5">2.5</A> <A HREF="slang-2.html#ss2.5">Error Handling</A>
+<LI><A NAME="toc2.6">2.6</A> <A HREF="slang-2.html#ss2.6">Run-Time Library</A>
+<LI><A NAME="toc2.7">2.7</A> <A HREF="slang-2.html#ss2.7">Input/Output</A>
+<LI><A NAME="toc2.8">2.8</A> <A HREF="slang-2.html#ss2.8">Obtaining more information about <B>S-Lang</B></A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="slang-3.html">Overview of the Language</A></H2>
+
+<UL>
+<LI><A NAME="toc3.1">3.1</A> <A HREF="slang-3.html#ss3.1">Variables and Functions</A>
+<LI><A NAME="toc3.2">3.2</A> <A HREF="slang-3.html#ss3.2">Qualifiers</A>
+<LI><A NAME="toc3.3">3.3</A> <A HREF="slang-3.html#ss3.3">Strings</A>
+<LI><A NAME="toc3.4">3.4</A> <A HREF="slang-3.html#ss3.4">Referencing and Dereferencing</A>
+<LI><A NAME="toc3.5">3.5</A> <A HREF="slang-3.html#ss3.5">Arrays</A>
+<LI><A NAME="toc3.6">3.6</A> <A HREF="slang-3.html#ss3.6">Lists</A>
+<LI><A NAME="toc3.7">3.7</A> <A HREF="slang-3.html#ss3.7">Structures and User-Defined Types</A>
+<LI><A NAME="toc3.8">3.8</A> <A HREF="slang-3.html#ss3.8">Namespaces</A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="slang-4.html">Data Types and Literal Constants</A></H2>
+
+<UL>
+<LI><A NAME="toc4.1">4.1</A> <A HREF="slang-4.html#ss4.1">Predefined Data Types</A>
+<LI><A NAME="toc4.2">4.2</A> <A HREF="slang-4.html#ss4.2">Typecasting: Converting from one Type to Another</A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="slang-5.html">Identifiers </A></H2>
+
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="slang-6.html">Variables </A></H2>
+
+<P>
+<H2><A NAME="toc7">7.</A> <A HREF="slang-7.html">Operators</A></H2>
+
+<UL>
+<LI><A NAME="toc7.1">7.1</A> <A HREF="slang-7.html#ss7.1">Unary Operators</A>
+<LI><A NAME="toc7.2">7.2</A> <A HREF="slang-7.html#ss7.2">Binary Operators</A>
+<LI><A NAME="toc7.3">7.3</A> <A HREF="slang-7.html#ss7.3">Mixing Integer and Floating Point Arithmetic</A>
+<LI><A NAME="toc7.4">7.4</A> <A HREF="slang-7.html#ss7.4">Short Circuit Boolean Evaluation</A>
+</UL>
+<P>
+<H2><A NAME="toc8">8.</A> <A HREF="slang-8.html">Statements</A></H2>
+
+<UL>
+<LI><A NAME="toc8.1">8.1</A> <A HREF="slang-8.html#ss8.1">Variable Declaration Statements</A>
+<LI><A NAME="toc8.2">8.2</A> <A HREF="slang-8.html#ss8.2">Assignment Statements </A>
+<LI><A NAME="toc8.3">8.3</A> <A HREF="slang-8.html#ss8.3">Conditional and Looping Statements</A>
+</UL>
+<P>
+<H2><A NAME="toc9">9.</A> <A HREF="slang-9.html">Functions</A></H2>
+
+<UL>
+<LI><A NAME="toc9.1">9.1</A> <A HREF="slang-9.html#ss9.1">Declaring Functions</A>
+<LI><A NAME="toc9.2">9.2</A> <A HREF="slang-9.html#ss9.2">Parameter Passing Mechanism</A>
+<LI><A NAME="toc9.3">9.3</A> <A HREF="slang-9.html#ss9.3">Returning Values</A>
+<LI><A NAME="toc9.4">9.4</A> <A HREF="slang-9.html#ss9.4">Multiple Assignment Statement </A>
+<LI><A NAME="toc9.5">9.5</A> <A HREF="slang-9.html#ss9.5">Referencing Variables </A>
+<LI><A NAME="toc9.6">9.6</A> <A HREF="slang-9.html#ss9.6">Functions with a Variable Number of Arguments</A>
+<LI><A NAME="toc9.7">9.7</A> <A HREF="slang-9.html#ss9.7">Qualifiers</A>
+<LI><A NAME="toc9.8">9.8</A> <A HREF="slang-9.html#ss9.8">Exit-Blocks</A>
+<LI><A NAME="toc9.9">9.9</A> <A HREF="slang-9.html#ss9.9">Handling Return Values from a Function</A>
+</UL>
+<P>
+<H2><A NAME="toc10">10.</A> <A HREF="slang-10.html">Namespaces </A></H2>
+
+<P>
+<H2><A NAME="toc11">11.</A> <A HREF="slang-11.html">Arrays </A></H2>
+
+<UL>
+<LI><A NAME="toc11.1">11.1</A> <A HREF="slang-11.html#ss11.1">Creating Arrays</A>
+<LI><A NAME="toc11.2">11.2</A> <A HREF="slang-11.html#ss11.2">Reshaping Arrays</A>
+<LI><A NAME="toc11.3">11.3</A> <A HREF="slang-11.html#ss11.3">Simple Array Indexing</A>
+<LI><A NAME="toc11.4">11.4</A> <A HREF="slang-11.html#ss11.4">Indexing Multiple Elements with Ranges</A>
+<LI><A NAME="toc11.5">11.5</A> <A HREF="slang-11.html#ss11.5">Arrays and Variables</A>
+<LI><A NAME="toc11.6">11.6</A> <A HREF="slang-11.html#ss11.6">Using Arrays in Computations</A>
+<LI><A NAME="toc11.7">11.7</A> <A HREF="slang-11.html#ss11.7">Arrays of Arrays: A Cautionary Note</A>
+</UL>
+<P>
+<H2><A NAME="toc12">12.</A> <A HREF="slang-12.html">Associative Arrays</A></H2>
+
+<P>
+<H2><A NAME="toc13">13.</A> <A HREF="slang-13.html">Structures and User-Defined Types</A></H2>
+
+<UL>
+<LI><A NAME="toc13.1">13.1</A> <A HREF="slang-13.html#ss13.1">Defining a Structure</A>
+<LI><A NAME="toc13.2">13.2</A> <A HREF="slang-13.html#ss13.2">Accessing the Fields of a Structure</A>
+<LI><A NAME="toc13.3">13.3</A> <A HREF="slang-13.html#ss13.3">Linked Lists </A>
+<LI><A NAME="toc13.4">13.4</A> <A HREF="slang-13.html#ss13.4">Defining New Types</A>
+<LI><A NAME="toc13.5">13.5</A> <A HREF="slang-13.html#ss13.5">Operator Overloading</A>
+</UL>
+<P>
+<H2><A NAME="toc14">14.</A> <A HREF="slang-14.html">Lists</A></H2>
+
+<P>
+<H2><A NAME="toc15">15.</A> <A HREF="slang-15.html">Error Handling</A></H2>
+
+<UL>
+<LI><A NAME="toc15.1">15.1</A> <A HREF="slang-15.html#ss15.1">Traditional Error Handling</A>
+<LI><A NAME="toc15.2">15.2</A> <A HREF="slang-15.html#ss15.2">Error Handling through Exceptions</A>
+</UL>
+<P>
+<H2><A NAME="toc16">16.</A> <A HREF="slang-16.html">Loading Files: evalfile, autoload, and require</A></H2>
+
+<P>
+<H2><A NAME="toc17">17.</A> <A HREF="slang-17.html">Modules </A></H2>
+
+<UL>
+<LI><A NAME="toc17.1">17.1</A> <A HREF="slang-17.html#ss17.1">Introduction</A>
+<LI><A NAME="toc17.2">17.2</A> <A HREF="slang-17.html#ss17.2">Using Modules</A>
+</UL>
+<P>
+<H2><A NAME="toc18">18.</A> <A HREF="slang-18.html">File Input/Output</A></H2>
+
+<UL>
+<LI><A NAME="toc18.1">18.1</A> <A HREF="slang-18.html#ss18.1">Input/Output via stdio</A>
+<LI><A NAME="toc18.2">18.2</A> <A HREF="slang-18.html#ss18.2">POSIX I/O</A>
+<LI><A NAME="toc18.3">18.3</A> <A HREF="slang-18.html#ss18.3">Advanced I/O techniques</A>
+</UL>
+<P>
+<H2><A NAME="toc19">19.</A> <A HREF="slang-19.html">slsh </A></H2>
+
+<UL>
+<LI><A NAME="toc19.1">19.1</A> <A HREF="slang-19.html#ss19.1">Running slsh</A>
+<LI><A NAME="toc19.2">19.2</A> <A HREF="slang-19.html#ss19.2">Command line processing</A>
+</UL>
+<P>
+<H2><A NAME="toc20">20.</A> <A HREF="slang-20.html">Debugging</A></H2>
+
+<UL>
+<LI><A NAME="toc20.1">20.1</A> <A HREF="slang-20.html#ss20.1">Tracebacks</A>
+<LI><A NAME="toc20.2">20.2</A> <A HREF="slang-20.html#ss20.2">Using the sldb debugger </A>
+</UL>
+<P>
+<H2><A NAME="toc21">21.</A> <A HREF="slang-21.html">Profiling</A></H2>
+
+<UL>
+<LI><A NAME="toc21.1">21.1</A> <A HREF="slang-21.html#ss21.1">Introduction</A>
+<LI><A NAME="toc21.2">21.2</A> <A HREF="slang-21.html#ss21.2">Using the profiler</A>
+</UL>
+<P>
+<H2><A NAME="toc22">22.</A> <A HREF="slang-22.html">Regular Expressions</A></H2>
+
+<UL>
+<LI><A NAME="toc22.1">22.1</A> <A HREF="slang-22.html#ss22.1"><B>S-Lang</B> RE Syntax</A>
+<LI><A NAME="toc22.2">22.2</A> <A HREF="slang-22.html#ss22.2">Differences between <B>S-Lang</B> and egrep REs</A>
+</UL>
+<H2>Appendix</H2>
+<P>
+<H2><A NAME="toc23">23.</A> <A HREF="slang-23.html">S-Lang 2 Interpreter NEWS</A></H2>
+
+<UL>
+<LI><A NAME="toc23.1">23.1</A> <A HREF="slang-23.html#ss23.1">What's new for <B>S-Lang</B> 2.2</A>
+<LI><A NAME="toc23.2">23.2</A> <A HREF="slang-23.html#ss23.2">What's new for <B>S-Lang</B> 2.1</A>
+<LI><A NAME="toc23.3">23.3</A> <A HREF="slang-23.html#ss23.3">What's new for <B>S-Lang</B> 2.0</A>
+<LI><A NAME="toc23.4">23.4</A> <A HREF="slang-23.html#ss23.4">Upgrading to <B>S-Lang</B> 2</A>
+</UL>
+<P>
+<H2><A NAME="toc24">24.</A> <A HREF="slang-24.html">Copyright</A></H2>
+
+<UL>
+<LI><A NAME="toc24.1">24.1</A> <A HREF="slang-24.html#ss24.1">The GNU Public License</A>
+<LI><A NAME="toc24.2">24.2</A> <A HREF="slang-24.html#ss24.2">The Unicode Inc. Copyright</A>
+</UL>
+<HR>
+<A HREF="slang-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>

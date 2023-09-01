@@ -1,0 +1,30 @@
+#
+#	Custom 'replacement' variables
+#	This is a user-defined file with additional variables for
+#	nctemplates unit.
+#
+#	Syntax: name = text
+#
+#	if text begins with
+#		$ will expand environment variable
+#	if text begins with
+#		? returns what the S-Lang code returns
+#	if text begins with
+#		! returns what the system shell returns
+#
+#	Examples:
+#v+
+# simple = oh yeah!
+# envar = ${MAKEFLAGS}
+# slvar = ? sprintf("%d", _time);
+# shvar = ! head -1 /etc/shells
+#v-
+#
+#	Test in template:
+#v+
+# This is simple text, @{simple}
+# This prints the default flags for make @{envar}
+# This prints the unix time @{slvar}
+# This prints the first of the default shells @{shvar}
+#v-
+#
