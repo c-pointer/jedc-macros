@@ -3,7 +3,8 @@
 BRIEF v3.1 compatibility for Jed and XJed.
 
 ![console](https://codeberg.org/nereusx/jedc-macros/raw/main/screenshots/cbrief-open.png)
-Jed in console, open file
+
+*Jed in console, open file*
 
 ### Index
 1. Requirements
