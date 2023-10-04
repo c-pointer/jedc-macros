@@ -1,12 +1,27 @@
 # jedc-macros
 
-CBrief compatibility for Jed (see patched jed version [nereusx/jedc](https://codeberg.org/nereusx/jedc))
+BRIEF v3.1 compatibility for Jed and XJed.
+
+![console](https://codeberg.org/nereusx/jedc-macros/raw/main/screenshots/cbrief-open.png)
+Jed in console, open file
+
+### Index
+1. Requirements
+2. Environment
+3. Installation
+4. Differences with original BRIEF v3.1
+5. Advanced Command Line Interface (F10)
+6. Optional modules/flags
+7. Terminal Escape Codes (fix/custom)
+8. .jedrc
+9. Additional modules (and menu bar)
+10. Screenshots
 
 #### See also:
-jed-man - manual pages of slang+jed to be used by man (mandb/mandoc) - subproject:
-https://codeberg.org/nereusx/jedc-macros/src/branch/main/jed-man/README.md
+* See patched jed version [patched-JED](https://codeberg.org/nereusx/jedc)
+* See manual pages of slang+jed to be used by man (mandb/mandoc) [jed-man](https://codeberg.org/nereusx/jedc-macros/src/branch/main/jed-man/README.md)
 
-## Require
+## 1. Requirerments
 packages slang[1] gettext[2] xclip[3]
 
 [1] libslang, slang, slsh it is the same project, a few distros uses different packages.
@@ -22,7 +37,7 @@ I do not support any non-unix not even linux with systemd.
 Fork both projects, jedc and jedc-macros, I glady to merge your changes.
 Systemd is still unwanted.
 
-## Environment
+## 2. Environment
 
 Backups directory
 ```
@@ -45,7 +60,7 @@ setenv JED_HOME ~/.jed
 alias b jed
 ```
 
-## Install patced version of jed
+## 3.1 Install patced version of jed
 ```
 git clone https://codeberg.org/jedc
 cd jedc
@@ -65,7 +80,7 @@ ln -s /usr/share/jed /usr/jed
 ln -s /usr/share/jed /usr/local/jed
 ```
 
-## Install macros
+## 3.2 Install macros
 ```
 git clone https://codeberg.org/jedc-macros
 cd jedc-macros
@@ -92,7 +107,7 @@ xjed*font: xft:Iosevka Fixed:size=14:style=bold
 
 Tip: `xrdb -merge ~/.Xresources` will update X on the fly.
 
-## Differences
+## 4. Differences
 
 *Jed* has not the same abilities with BRIEF's windows system.
 It is only creates vertically windows. Anyway, the macros uses
@@ -138,7 +153,7 @@ Ctrl+Q              Cancel (ESC works too, but may waits 1 sec in Unix).
 [F12]               JED's menu (BRIEF had no menus, except the popup)
 ```
 
-## Command line interface
+## 5. Command line interface
 This is a powerfull tool, by far better than BRIEF's.
 
 ```
@@ -172,7 +187,7 @@ if begins with ">>",  Appends the selected block or the whole buffer to file.
 if begins with '&',   Execute in background and in new terminal on XJed.                             
 ```
 
-## Compile/Build/Run
+## Compile/Build/Run (not work well)
 ```
 [Alt+F10]           Compile Buffer
 [Ctrl+F10]          Make (non-brief)
@@ -185,7 +200,7 @@ For now, F9 make & run, Ctrl+F9 compile. In old BRIEF, F9 was
 used to load keyboard macros, and Shift+F9 to delete a keyboard macro file.
 This can be done by CLI but I really I never found it usefull.
 
-## Modules/Flags
+## 6. Modules/Flags
 The following changes are controlled by flags in the beginning of cbrief.sl
 
 Support Win/KDE clipboard keys (default on)
@@ -216,7 +231,7 @@ Ctrl+Left  = Home
 Ctrl+Right = End
 ```
 
-## User's terminal codes fix file
+## 7. User's terminal codes fix file
 
 Keys compinations in BRIEF are very extensive that does not supported by terminfo
 in Unix. Even worst there are differences between terminal emulators or multiplexers.
@@ -236,13 +251,13 @@ Intented to not used by CBRIEF developers.
 There is also a `~/.jed/nc-term.sl` file that is used for me to give some ready
 solutions. This is loaded before `term.sl`, so you dont need to worry.
 
-## User's jedrc additional file
+## 8. User's jedrc additional file
 
 The `~/.jed/local.sl` file is used for any user to add its own commands without mess it with the rest cbrief package.
 It is user's file, remove all lines and note yours, does not matter. 
 Intented to not used by CBRIEF developers.
 
-## Additional user modules
+## 9. Additional user modules
 CBRIEF offer interface to adding your own modules to current editor.
 And already has much more advanced capability (for example multiple backup files).
 Build your ideas in [S-Lang](https://www.jedsoft.org/slang/) and adding to the editor
@@ -300,7 +315,7 @@ does not need so detailed path, for example "C&ompile".
 Please report any incompatibility with orignal BRIEF and its version.
 Also any link or file from original manual / software are welcome.
 
-## Screenshots
+## 10. Screenshots
 
 Xjed με Iosevka truetype font
 ![xjed](https://codeberg.org/nereusx/jedc-macros/raw/main/screenshots/cbrief-xjed.png)
